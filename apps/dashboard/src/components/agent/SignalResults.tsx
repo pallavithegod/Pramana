@@ -1,13 +1,11 @@
 import type { Report } from "@/lib/chat";
 import SignalChart from "./SignalChart";
 import EvidencePanel from "./EvidencePanel";
-export default function SignalResults({ report }: {
-    report: Report;
-}) {
-    const signals = report.measurements.flatMap(m => m.series ?? []).filter(s => s.status);
-    const sources = report.citations.filter(url => /^https?:\/\//.test(url));
-    return <div className="signal-results"><div className="report-meta">{report.status} · {report.searches_used} searches · {report.tool_calls} tool calls</div>
- {!!signals.length && <details open><summary>Price signal coverage ({signals.length})</summary><div className="signal-grid">{signals.map((s, i) => <div className="signal" key={i}><strong>{s.title ?? s.product_id}</strong><p>{s.smoothed_baseline != null ? `${s.currency} ${s.smoothed_baseline.toFixed(2)} baseline estimate` : "Insufficient comparable history"}</p><small>{s.n_observations} observations{s.innovation_z != null ? ` · innovation z ${s.innovation_z.toFixed(2)}` : ""}</small><SignalChart signal={s} /></div>)}</div></details>}
- <EvidencePanel report={report} />
- {!!sources.length && <details><summary>Sources ({sources.length})</summary>{sources.map(url => <a className="source" href={url} key={url} target="_blank" rel="noreferrer">{url}</a>)}</details>}</div>;
+export default function SignalResults({ report, snapshotMode = false }: { report: Report; snapshotMode?: boolean }) {
+  const signals = report.measurements.flatMap(m => m.series ?? []);
+  const sources = report.citations.filter(url => /^https?:\/\//.test(url));
+  return <div className="signal-results"><div className="report-meta"><span className="report-run">RUN {report.run_id}</span><span>{report.status}</span><span>{report.searches_used} searches</span><span>{report.tool_calls} tool calls</span>{snapshotMode && <span className="snapshot-badge">Snapshot Mode: Cached Economic Observations</span>}</div>
+    {!!signals.length ? <details open><summary>Price signal coverage <span className="summary-count">{signals.length} series</span></summary><div className="signal-grid">{signals.map((s, i) => <div className="signal" key={`${s.product_id}-${s.currency}-${i}`}><div className="signal-topline"><span className="signal-code">{s.product_id}</span><span className={`signal-status ${s.status === "ok" ? "status-ok" : "status-warn"}`}>{s.status}</span></div><strong>{s.title ?? s.product_id}</strong><p>{s.smoothed_baseline != null ? <><b>{s.currency} {s.smoothed_baseline.toFixed(2)}</b> <span>smoothed baseline</span></> : "Insufficient comparable history for a filtered baseline"}</p><small>{s.n_observations} observations{s.innovation_z != null ? ` · innovation z ${s.innovation_z.toFixed(2)}` : ""}{s.band_low != null && s.band_high != null ? ` · 95% band ${s.currency} ${s.band_low.toFixed(2)}–${s.band_high.toFixed(2)}` : ""}</small><SignalChart signal={s}/></div>)}</div></details> : <div className="no-signal"><span className="snapshot-badge">{snapshotMode ? "Snapshot Mode: Cached Economic Observations" : "Coverage gap"}</span><b>{snapshotMode ? "Showing the most recent completed capture" : "No comparable price series in this run"}</b><p>{snapshotMode ? "This view is backed by the last successfully completed local report. The failed or incomplete run did not replace its observations." : "Search results did not contain enough comparable observations for a chart. The answer and evidence remain available below."}</p></div>}
+    <EvidencePanel report={report}/>{!!sources.length && <details className="source-list"><summary>Source links <span className="summary-count">{sources.length}</span></summary>{sources.map(url => <a className="source" href={url} key={url} target="_blank" rel="noreferrer">{url}</a>)}</details>}
+  </div>;
 }
