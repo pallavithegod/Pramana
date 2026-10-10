@@ -1,0 +1,108 @@
+{
+    "data": {
+        "lowFareDateMarkets": [
+            {
+                "lowestFareAmount": null,
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-08-31T00:00:00",
+                "departureDateToShow": "Mon, 31 Aug",
+                "isCurrentDate": false,
+                "isOneDayBehindDate": true,
+                "isOneDayAheadDate": false
+            },
+            {
+                "lowestFareAmount": {
+                    "fareAmount": 5179,
+                    "farePointAmount": 0,
+                    "taxesAndFeesAmount": 1559
+                },
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-09-01T00:00:00",
+                "departureDateToShow": "Tue, 01 Sep",
+                "isCurrentDate": true,
+                "isOneDayBehindDate": false,
+                "isOneDayAheadDate": false
+            },
+            {
+                "lowestFareAmount": {
+                    "fareAmount": 4900,
+                    "farePointAmount": 0,
+                    "taxesAndFeesAmount": 1547
+                },
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-09-02T00:00:00",
+                "departureDateToShow": "Wed, 02 Sep",
+                "isCurrentDate": false,
+                "isOneDayBehindDate": false,
+                "isOneDayAheadDate": true
+            },
+            {
+                "lowestFareAmount": {
+                    "fareAmount": 4900,
+                    "farePointAmount": 0,
+                    "taxesAndFeesAmount": 1547
+                },
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-09-03T00:00:00",
+                "departureDateToShow": "Thu, 03 Sep",
+                "isCurrentDate": false,
+                "isOneDayBehindDate": false,
+                "isOneDayAheadDate": false
+            },
+            {
+                "lowestFareAmount": {
+                    "fareAmount": 4900,
+                    "farePointAmount": 0,
+                    "taxesAndFeesAmount": 1547
+                },
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-09-04T00:00:00",
+                "departureDateToShow": "Fri, 04 Sep",
+                "isCurrentDate": false,
+                "isOneDayBehindDate": false,
+                "isOneDayAheadDate": false
+            },
+            {
+                "lowestFareAmount": {
+                    "fareAmount": 9531,
+                    "farePointAmount": 0,
+                    "taxesAndFeesAmount": 1777
+                },
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-09-05T00:00:00",
+                "departureDateToShow": "Sat, 05 Sep",
+                "isCurrentDate": false,
+                "isOneDayBehindDate": false,
+                "isOneDayAheadDate": false
+            },
+            {
+                "lowestFareAmount": {
+                    "fareAmount": 17192,
+                    "farePointAmount": 0,
+                    "taxesAndFeesAmount": 2161
+                },
+                "destination": "BOM",
+                "origin": "DEL",
+                "departureDate": "2026-09-06T00:00:00",
+                "departureDateToShow": "Sun, 06 Sep",
+                "isCurrentDate": false,
+                "isOneDayBehindDate": false,
+                "isOneDayAheadDate": false
+            }
+        ],
+        "includeTaxesAndFees": true,
+        "currencyCode": "INR",
+        "stationCodeTimeZoneOffsets": {
+            "DEL": 330
+        }
+    },
+    "metadata": {
+        "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/availabilitylowfarecontrollerv2"
+    }
+}

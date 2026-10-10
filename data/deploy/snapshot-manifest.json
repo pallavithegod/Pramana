@@ -1,0 +1,36 @@
+{
+  "database": {
+    "api_cache_entries": 102,
+    "bytes": 40865792,
+    "collection_dates": 41,
+    "excluded_source_tables": [
+      "api_users"
+    ],
+    "fare_quotes": 105436,
+    "first_collected_at": "2026-08-31T19:21:58.657426+05:30",
+    "included_tables": [
+      "fare_quotes",
+      "api_response_cache"
+    ],
+    "last_collected_at": "2026-10-10T15:10:01.446921+05:30",
+    "path": "data/deploy/apix.snapshot.sqlite",
+    "sha256": "b892507d2cdaef55475946458ca4e39205be0b8bd16bd4f5a9c7436f718f39da"
+  },
+  "generated_at": "2026-10-10T09:56:31+00:00",
+  "ledger": {
+    "coverage_complete": true,
+    "entries": 10743,
+    "head": "01f6ba8d38d760594c7806d3dd00aff7794e52970efb9b99657355e2a75b0089",
+    "last_sealed_at": "2026-10-10T09:40:08+00:00",
+    "path": "data/ledger.jsonl",
+    "raw_files": 10743,
+    "sealed_files": 10743,
+    "sha256": "88dc7ac6ad11ef976234b6a2c3c8f9515f92602f9813a068c916c10b75bfdca1",
+    "unsealed_files": 0,
+    "verified_at_publish": true
+  },
+  "manifest_sha256": "c7897261fa3bf0fcfba043cfa82e2e2b31351a5a04a99710c2d1faa1115cf3b7",
+  "schema_version": 1,
+  "serving_mode": "immutable-read-only-snapshot",
+  "source_mode": "local-scraper-node"
+}

@@ -1,0 +1,2878 @@
+{
+    "data": {
+        "currencyCode": "INR",
+        "currentSourceOrganization": null,
+        "faresAvailable": [
+            {
+                "key": "MH5VMH5_UVB_VTBPN1ZXSVh_MTAwMn5_Mn4xfk5CT01EWE4wMDIwMDEwflghMQ--",
+                "value": {
+                    "fareAvailabilityKey": "MH5VMH5_UVB_VTBPN1ZXSVh_MTAwMn5_Mn4xfk5CT01EWE4wMDIwMDEwflghMQ--",
+                    "fares": [
+                        {
+                            "classOfService": "U0",
+                            "classType": null,
+                            "fareApplicationType": "Route",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 5916.0000,
+                                    "fareAmount": 7596.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 5916.0000,
+                                    "revenueFare": 5916.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 5916.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 5916.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 578.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 578.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 302.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 302.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 5916.0000,
+                        "fareTotal": 7596.0000,
+                        "publishedTotal": 5916.0000
+                    }
+                }
+            },
+            {
+                "key": "MH5VMH5_UVB_VTBPN1JXSVh_MTAwMX5_Mn4xfk5CT01EWE4wMDIwMDEwflghMA--",
+                "value": {
+                    "fareAvailabilityKey": "MH5VMH5_UVB_VTBPN1JXSVh_MTAwMX5_Mn4xfk5CT01EWE4wMDIwMDEwflghMA--",
+                    "fares": [
+                        {
+                            "classOfService": "U0",
+                            "classType": null,
+                            "fareApplicationType": "Route",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 5516.0000,
+                                    "fareAmount": 7176.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 5516.0000,
+                                    "revenueFare": 5516.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 5516.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 5516.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 578.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 578.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DXN-BOM",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 282.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 282.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 5516.0000,
+                        "fareTotal": 7176.0000,
+                        "publishedTotal": 5516.0000
+                    }
+                }
+            },
+            {
+                "key": "MH5QMX5_UVB_UDFPN1JXSVh_MTAwMX5_MTF_MX5OQk9NREVMMDExMDAxMH5YITI-",
+                "value": {
+                    "fareAvailabilityKey": "MH5QMX5_UVB_UDFPN1JXSVh_MTAwMX5_MTF_MX5OQk9NREVMMDExMDAxMH5YITI-",
+                    "fares": [
+                        {
+                            "classOfService": "P1",
+                            "classType": null,
+                            "fareApplicationType": "Route",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 7897.0000,
+                                    "fareAmount": 9249.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 7897.0000,
+                                    "revenueFare": 7897.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 7897.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 7897.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 400.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 400.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 7897.0000,
+                        "fareTotal": 9249.0000,
+                        "publishedTotal": 7897.0000
+                    }
+                }
+            },
+            {
+                "key": "MH5QMX5_UVB_UDFPN1ZXSVh_MTAwMn5_OH4xfk5CT01ERUwwMDgwMDEwflghMw--",
+                "value": {
+                    "fareAvailabilityKey": "MH5QMX5_UVB_UDFPN1ZXSVh_MTAwMn5_OH4xfk5CT01ERUwwMDgwMDEwflghMw--",
+                    "fares": [
+                        {
+                            "classOfService": "P1",
+                            "classType": null,
+                            "fareApplicationType": "Route",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 8278.0000,
+                                    "fareAmount": 9650.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 8278.0000,
+                                    "revenueFare": 8278.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 8278.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 8278.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BOM",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 420.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 420.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 8278.0000,
+                        "fareTotal": 9650.0000,
+                        "publishedTotal": 8278.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflEzfn5RUH5RM083UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCExMDE0",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflEzfn5RUH5RM083UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCExMDE0",
+                    "fares": [
+                        {
+                            "classOfService": "E",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 17753.0000,
+                                    "fareAmount": 19989.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 17753.0000,
+                                    "revenueFare": 17753.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 17753.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 17753.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1234.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1234.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        },
+                        {
+                            "classOfService": "Q3",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 6747.0000,
+                                    "fareAmount": 6747.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 6747.0000,
+                                    "revenueFare": 6747.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 6747.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 6747.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 24500.0000,
+                        "fareTotal": 26736.0000,
+                        "publishedTotal": 24500.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE0Ng--",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE0Ng--",
+                    "fares": [
+                        {
+                            "classOfService": "H",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 16175.0000,
+                                    "fareAmount": 18289.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 16175.0000,
+                                    "revenueFare": 16175.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 16175.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 16175.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1112.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1112.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        },
+                        {
+                            "classOfService": "R1",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 5898.0000,
+                                    "fareAmount": 5898.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 5898.0000,
+                                    "revenueFare": 5898.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 5898.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 5898.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 22073.0000,
+                        "fareTotal": 24187.0000,
+                        "publishedTotal": 22073.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfl4yflEzfn5RUH5RM083UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE4MTA-",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfl4yflEzfn5RUH5RM083UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE4MTA-",
+                    "fares": [
+                        {
+                            "classOfService": "H",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 16175.0000,
+                                    "fareAmount": 18331.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 16175.0000,
+                                    "revenueFare": 16175.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 16175.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 16175.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1154.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1154.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        },
+                        {
+                            "classOfService": "Q3",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 6747.0000,
+                                    "fareAmount": 6747.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 6747.0000,
+                                    "revenueFare": 6747.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 6747.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 6747.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 22922.0000,
+                        "fareTotal": 25078.0000,
+                        "publishedTotal": 22922.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfl4yflEzfn5RUH5RM083VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghOTEx",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfl4yflEzfn5RUH5RM083VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghOTEx",
+                    "fares": [
+                        {
+                            "classOfService": "H",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 16556.0000,
+                                    "fareAmount": 18758.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 16556.0000,
+                                    "revenueFare": 16556.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 16556.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 16556.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1200.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1200.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        },
+                        {
+                            "classOfService": "Q3",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 7297.0000,
+                                    "fareAmount": 7297.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 7297.0000,
+                                    "revenueFare": 7297.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 7297.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 7297.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 23853.0000,
+                        "fareTotal": 26055.0000,
+                        "publishedTotal": 23853.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE2MTI-",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE2MTI-",
+                    "fares": [
+                        {
+                            "classOfService": "E",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 17753.0000,
+                                    "fareAmount": 19945.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 17753.0000,
+                                    "revenueFare": 17753.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 17753.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 17753.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1190.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1190.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        },
+                        {
+                            "classOfService": "R1",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 5898.0000,
+                                    "fareAmount": 5898.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 5898.0000,
+                                    "revenueFare": 5898.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 5898.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 5898.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 23651.0000,
+                        "fareTotal": 25843.0000,
+                        "publishedTotal": 23651.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNzEz",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNzEz",
+                    "fares": [
+                        {
+                            "classOfService": "E",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 18134.0000,
+                                    "fareAmount": 20374.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 18134.0000,
+                                    "revenueFare": 18134.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 18134.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 18134.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1238.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1238.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        },
+                        {
+                            "classOfService": "R1",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 6448.0000,
+                                    "fareAmount": 6448.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 6448.0000,
+                                    "revenueFare": 6448.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 6448.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 6448.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 24582.0000,
+                        "fareTotal": 26822.0000,
+                        "publishedTotal": 24582.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNTc-",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNTc-",
+                    "fares": [
+                        {
+                            "classOfService": "H",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 16556.0000,
+                                    "fareAmount": 18716.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 16556.0000,
+                                    "revenueFare": 16556.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 16556.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 16556.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1158.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1158.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        },
+                        {
+                            "classOfService": "R1",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 6448.0000,
+                                    "fareAmount": 6448.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 6448.0000,
+                                    "revenueFare": 6448.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 6448.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 6448.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 23004.0000,
+                        "fareTotal": 25164.0000,
+                        "publishedTotal": 23004.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflExfn5RUH5RMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCExNjE4",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflExfn5RUH5RMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCExNjE4",
+                    "fares": [
+                        {
+                            "classOfService": "E",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 17753.0000,
+                                    "fareAmount": 20019.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 17753.0000,
+                                    "revenueFare": 17753.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 17753.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 17753.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1264.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1264.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        },
+                        {
+                            "classOfService": "Q1",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 7379.0000,
+                                    "fareAmount": 7379.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 7379.0000,
+                                    "revenueFare": 7379.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 7379.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 7379.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "EC",
+                            "ruleNumber": "1001"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 25132.0000,
+                        "fareTotal": 27398.0000,
+                        "publishedTotal": 25132.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflExfn5RUH5RMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghMTcxOQ--",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflExfn5RUH5RMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghMTcxOQ--",
+                    "fares": [
+                        {
+                            "classOfService": "E",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 18134.0000,
+                                    "fareAmount": 20448.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 18134.0000,
+                                    "revenueFare": 18134.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 18134.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 18134.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1312.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1312.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        },
+                        {
+                            "classOfService": "Q1",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 7929.0000,
+                                    "fareAmount": 7929.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 7929.0000,
+                                    "revenueFare": 7929.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 7929.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 7929.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 26063.0000,
+                        "fareTotal": 28377.0000,
+                        "publishedTotal": 26063.0000
+                    }
+                }
+            },
+            {
+                "key": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflEzfn5RUH5RM083VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghMTExNQ--",
+                "value": {
+                    "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflEzfn5RUH5RM083VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghMTExNQ--",
+                    "fares": [
+                        {
+                            "classOfService": "E",
+                            "classType": null,
+                            "fareApplicationType": "Sector",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 18134.0000,
+                                    "fareAmount": 20416.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 18134.0000,
+                                    "revenueFare": 18134.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 18134.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 18134.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        },
+                                        {
+                                            "amount": 75.0,
+                                            "code": "CUTE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 75.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 50.0,
+                                            "code": "RCS",
+                                            "currencyCode": "INR",
+                                            "detail": "BLR-BOM",
+                                            "foreignAmount": 50.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 350.0,
+                                            "code": "WFE",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 350.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 236.0,
+                                            "code": "ASF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 236.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 152.0,
+                                            "code": "UDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 152.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 89.0,
+                                            "code": "DUDF",
+                                            "currencyCode": "INR",
+                                            "detail": "DEL-BLR",
+                                            "foreignAmount": 89.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "TravelFee"
+                                        },
+                                        {
+                                            "amount": 1280.0,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": "TaxSum",
+                                            "foreignAmount": 1280.0,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "Tax"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        },
+                        {
+                            "classOfService": "Q3",
+                            "classType": null,
+                            "fareApplicationType": "Governing",
+                            "passengerFares": [
+                                {
+                                    "discountedFare": 7297.0000,
+                                    "fareAmount": 7297.0000,
+                                    "multiplier": 1,
+                                    "passengerType": "ADT",
+                                    "publishedFare": 7297.0000,
+                                    "revenueFare": 7297.0000,
+                                    "serviceCharges": [
+                                        {
+                                            "amount": 7297.0000,
+                                            "code": null,
+                                            "currencyCode": "INR",
+                                            "detail": null,
+                                            "foreignAmount": 7297.0000,
+                                            "foreignCurrencyCode": "INR",
+                                            "type": "FarePrice"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "productClass": "AV",
+                            "ruleNumber": "1002"
+                        }
+                    ],
+                    "totals": {
+                        "discountedTotal": 25431.0000,
+                        "fareTotal": 27713.0000,
+                        "publishedTotal": 25431.0000
+                    }
+                }
+            }
+        ],
+        "includeTaxesAndFees": true,
+        "promotionCode": null,
+        "results": [
+            {
+                "trips": [
+                    {
+                        "date": "2026-08-31T00:00:00",
+                        "journeysAvailableByMarket": [
+                            {
+                                "key": "DXN|BOM",
+                                "value": [
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DXN",
+                                            "arrival": "2026-08-31T23:20:00",
+                                            "departure": "2026-08-31T21:05:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MH5VMH5_UVB_VTBPN1JXSVh_MTAwMX5_Mn4xfk5CT01EWE4wMDIwMDEwflghMA--",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 66,
+                                                        "status": "Active",
+                                                        "reference": "MH5VMH5_UVB_VTBPN1JXSVh_MTAwMX5_Mn4xfk5CT01EWE4wMDIwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": false
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MH5VMH5_UVB_VTBPN1ZXSVh_MTAwMn5_Mn4xfk5CT01EWE4wMDIwMDEwflghMQ--",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 66,
+                                                        "status": "Active",
+                                                        "reference": "MH5VMH5_UVB_VTBPN1ZXSVh_MTAwMn5_Mn4xfk5CT01EWE4wMDIwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": false
+                                            }
+                                        ],
+                                        "flightType": "NonStop",
+                                        "journeyKey": "UVB_MTk0Mn4gfn5EWE5_MDgvMzEvMjAyNiAyMTowNX5CT01_MDgvMzEvMjAyNiAyMzoyMH5_",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "DXN",
+                                                    "arrival": "2026-08-31T23:20:00",
+                                                    "departure": "2026-08-31T21:05:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1942",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "DXN",
+                                                            "arrival": "2026-08-31T23:20:00",
+                                                            "departure": "2026-08-31T21:05:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1942 DXNBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-08-31T23:20:00",
+                                                            "arrivalTimeUtc": "2026-08-31T17:50:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": null,
+                                                            "departureTime": "2026-08-31T21:05:00",
+                                                            "departureTimeUtc": "2026-08-31T15:35:00",
+                                                            "equipmentType": "7WH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTk0Mn4gfn5EWE5_MDgvMzEvMjAyNiAyMTowNX5CT01_MDgvMzEvMjAyNiAyMzoyMH5_"
+                                            }
+                                        ],
+                                        "stops": 0,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-08-31T23:10:00",
+                                            "estimatedDepartureTime": "2026-08-31T21:05:00",
+                                            "scheduledArrivalTime": "2026-08-31T23:20:00",
+                                            "scheduledDepartureTime": "2026-08-31T21:05:00"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "DEL|BOM",
+                                "value": [
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-08-31T22:20:00",
+                                            "departure": "2026-08-31T19:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MH5QMX5_UVB_UDFPN1JXSVh_MTAwMX5_MTF_MX5OQk9NREVMMDExMDAxMH5YITI-",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 11,
+                                                        "status": "Active",
+                                                        "reference": "MH5QMX5_UVB_UDFPN1JXSVh_MTAwMX5_MTF_MX5OQk9NREVMMDExMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": false
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MH5QMX5_UVB_UDFPN1ZXSVh_MTAwMn5_OH4xfk5CT01ERUwwMDgwMDEwflghMw--",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 11,
+                                                        "status": "Active",
+                                                        "reference": "MH5QMX5_UVB_UDFPN1ZXSVh_MTAwMn5_OH4xfk5CT01ERUwwMDgwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": false
+                                            }
+                                        ],
+                                        "flightType": "NonStop",
+                                        "journeyKey": "UVB_MTgyNn4gfn5ERUx_MDgvMzEvMjAyNiAxOTo1NX5CT01_MDgvMzEvMjAyNiAyMjoyMH5_",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-08-31T22:20:00",
+                                                    "departure": "2026-08-31T19:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1826",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-08-31T22:20:00",
+                                                            "departure": "2026-08-31T19:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1826 DELBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-08-31T22:20:00",
+                                                            "arrivalTimeUtc": "2026-08-31T16:50:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T19:55:00",
+                                                            "departureTimeUtc": "2026-08-31T14:25:00",
+                                                            "equipmentType": "7WL",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTgyNn4gfn5ERUx_MDgvMzEvMjAyNiAxOTo1NX5CT01_MDgvMzEvMjAyNiAyMjoyMH5_"
+                                            }
+                                        ],
+                                        "stops": 0,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-08-31T22:05:00",
+                                            "estimatedDepartureTime": "2026-08-31T19:55:00",
+                                            "scheduledArrivalTime": "2026-08-31T22:20:00",
+                                            "scheduledDepartureTime": "2026-08-31T19:55:00"
+                                        }
+                                    },
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-09-01T06:45:00",
+                                            "departure": "2026-08-31T21:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE0Ng--",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "Mn5SMX5_UVB_UjFPN1JXSVh_MTAwMX5_OX4xfk5CTFJCT00wMDkwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNTc-",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "Mn5SMX5_UVB_UjFPN1ZXSVh_MTAwMn5_MTN_MX5OQkxSQk9NMDEzMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            }
+                                        ],
+                                        "flightType": "Connect",
+                                        "journeyKey": "UVB_MTM1MH4gfn5ERUx_MDgvMzEvMjAyNiAyMTo1NX5CTFJ_MDkvMDEvMjAyNiAwMDo1MH5_XlFQfjEzODF_IH5_QkxSfjA5LzAxLzIwMjYgMDQ6NTB_Qk9NfjA5LzAxLzIwMjYgMDY6NDV_fg--",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BLR",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-09-01T00:50:00",
+                                                    "departure": "2026-08-31T21:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1350",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BLR",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-09-01T00:50:00",
+                                                            "departure": "2026-08-31T21:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1350 DELBLR",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 1",
+                                                            "arrivalTime": "2026-09-01T00:50:00",
+                                                            "arrivalTimeUtc": "2026-08-31T19:20:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T21:55:00",
+                                                            "departureTimeUtc": "2026-08-31T16:25:00",
+                                                            "equipmentType": "7YH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM1MH4gfn5ERUx_MDgvMzEvMjAyNiAyMTo1NX5CTFJ_MDkvMDEvMjAyNiAwMDo1MH5_"
+                                            },
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "BLR",
+                                                    "arrival": "2026-09-01T06:45:00",
+                                                    "departure": "2026-09-01T04:50:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1381",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "BLR",
+                                                            "arrival": "2026-09-01T06:45:00",
+                                                            "departure": "2026-09-01T04:50:00"
+                                                        },
+                                                        "flightReference": "20260901 QP1381 BLRBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-09-01T06:45:00",
+                                                            "arrivalTimeUtc": "2026-09-01T01:15:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-09-01T04:50:00",
+                                                            "departureTimeUtc": "2026-08-31T23:20:00",
+                                                            "equipmentType": "7BH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM4MX4gfn5CTFJ_MDkvMDEvMjAyNiAwNDo1MH5CT01_MDkvMDEvMjAyNiAwNjo0NX5_"
+                                            }
+                                        ],
+                                        "stops": 1,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-09-01T06:45:00",
+                                            "estimatedDepartureTime": "2026-08-31T21:55:00",
+                                            "scheduledArrivalTime": "2026-09-01T06:45:00",
+                                            "scheduledDepartureTime": "2026-08-31T21:55:00"
+                                        }
+                                    },
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-09-01T07:10:00",
+                                            "departure": "2026-08-31T21:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfl4yflEzfn5RUH5RM083UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE4MTA-",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ifn5RUH5IME83UldJWH4xMDAxfn4xMn4xfk5CTFJERUwwMTIwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "Mn5RM35_UVB_UTNPN1JXSVh_MTAwMX5_OX4xfk5CTFJCT00wMDkwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfl4yflEzfn5RUH5RM083VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghOTEx",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ifn5RUH5IME83VldJWH4xMDAyfn4xNH4xfk5CTFJERUwwMTQwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 1,
+                                                        "status": "Active",
+                                                        "reference": "Mn5RM35_UVB_UTNPN1ZXSVh_MTAwMn5_MTN_MX5OQkxSQk9NMDEzMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            }
+                                        ],
+                                        "flightType": "Connect",
+                                        "journeyKey": "UVB_MTM1MH4gfn5ERUx_MDgvMzEvMjAyNiAyMTo1NX5CTFJ_MDkvMDEvMjAyNiAwMDo1MH5_XlFQfjEzODN_IH5_QkxSfjA5LzAxLzIwMjYgMDU6MjV_Qk9NfjA5LzAxLzIwMjYgMDc6MTB_fg--",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BLR",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-09-01T00:50:00",
+                                                    "departure": "2026-08-31T21:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1350",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BLR",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-09-01T00:50:00",
+                                                            "departure": "2026-08-31T21:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1350 DELBLR",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 1",
+                                                            "arrivalTime": "2026-09-01T00:50:00",
+                                                            "arrivalTimeUtc": "2026-08-31T19:20:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T21:55:00",
+                                                            "departureTimeUtc": "2026-08-31T16:25:00",
+                                                            "equipmentType": "7YH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM1MH4gfn5ERUx_MDgvMzEvMjAyNiAyMTo1NX5CTFJ_MDkvMDEvMjAyNiAwMDo1MH5_"
+                                            },
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "BLR",
+                                                    "arrival": "2026-09-01T07:10:00",
+                                                    "departure": "2026-09-01T05:25:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1383",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "BLR",
+                                                            "arrival": "2026-09-01T07:10:00",
+                                                            "departure": "2026-09-01T05:25:00"
+                                                        },
+                                                        "flightReference": "20260901 QP1383 BLRBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-09-01T07:10:00",
+                                                            "arrivalTimeUtc": "2026-09-01T01:40:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-09-01T05:25:00",
+                                                            "departureTimeUtc": "2026-08-31T23:55:00",
+                                                            "equipmentType": "7WH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM4M34gfn5CTFJ_MDkvMDEvMjAyNiAwNToyNX5CT01_MDkvMDEvMjAyNiAwNzoxMH5_"
+                                            }
+                                        ],
+                                        "stops": 1,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-09-01T07:10:00",
+                                            "estimatedDepartureTime": "2026-08-31T21:55:00",
+                                            "scheduledArrivalTime": "2026-09-01T07:10:00",
+                                            "scheduledDepartureTime": "2026-08-31T21:55:00"
+                                        }
+                                    },
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-09-01T06:45:00",
+                                            "departure": "2026-08-31T20:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE2MTI-",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "Mn5SMX5_UVB_UjFPN1JXSVh_MTAwMX5_OX4xfk5CTFJCT00wMDkwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNzEz",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "Mn5SMX5_UVB_UjFPN1ZXSVh_MTAwMn5_MTN_MX5OQkxSQk9NMDEzMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            }
+                                        ],
+                                        "flightType": "Connect",
+                                        "journeyKey": "UVB_MTMwOH4gfn5ERUx_MDgvMzEvMjAyNiAyMDo1NX5CTFJ_MDgvMzEvMjAyNiAyMzo1MH5_XlFQfjEzODF_IH5_QkxSfjA5LzAxLzIwMjYgMDQ6NTB_Qk9NfjA5LzAxLzIwMjYgMDY6NDV_fg--",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BLR",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-08-31T23:50:00",
+                                                    "departure": "2026-08-31T20:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1308",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BLR",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-08-31T23:50:00",
+                                                            "departure": "2026-08-31T20:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1308 DELBLR",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 1",
+                                                            "arrivalTime": "2026-08-31T23:50:00",
+                                                            "arrivalTimeUtc": "2026-08-31T18:20:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T20:55:00",
+                                                            "departureTimeUtc": "2026-08-31T15:25:00",
+                                                            "equipmentType": "7YL",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTMwOH4gfn5ERUx_MDgvMzEvMjAyNiAyMDo1NX5CTFJ_MDgvMzEvMjAyNiAyMzo1MH5_"
+                                            },
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "BLR",
+                                                    "arrival": "2026-09-01T06:45:00",
+                                                    "departure": "2026-09-01T04:50:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1381",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "BLR",
+                                                            "arrival": "2026-09-01T06:45:00",
+                                                            "departure": "2026-09-01T04:50:00"
+                                                        },
+                                                        "flightReference": "20260901 QP1381 BLRBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-09-01T06:45:00",
+                                                            "arrivalTimeUtc": "2026-09-01T01:15:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-09-01T04:50:00",
+                                                            "departureTimeUtc": "2026-08-31T23:20:00",
+                                                            "equipmentType": "7BH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM4MX4gfn5CTFJ_MDkvMDEvMjAyNiAwNDo1MH5CT01_MDkvMDEvMjAyNiAwNjo0NX5_"
+                                            }
+                                        ],
+                                        "stops": 1,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-09-01T06:45:00",
+                                            "estimatedDepartureTime": "2026-08-31T20:55:00",
+                                            "scheduledArrivalTime": "2026-09-01T06:45:00",
+                                            "scheduledDepartureTime": "2026-08-31T20:55:00"
+                                        }
+                                    },
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-09-01T06:45:00",
+                                            "departure": "2026-08-31T22:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflIxfn5RUH5SMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCE2MTI-",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "Mn5SMX5_UVB_UjFPN1JXSVh_MTAwMX5_OX4xfk5CTFJCT00wMDkwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflIxfn5RUH5SMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghNzEz",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "Mn5SMX5_UVB_UjFPN1ZXSVh_MTAwMn5_MTN_MX5OQkxSQk9NMDEzMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            }
+                                        ],
+                                        "flightType": "Connect",
+                                        "journeyKey": "UVB_MTgxMn4gfn5ERUx_MDgvMzEvMjAyNiAyMjo1NX5CTFJ_MDkvMDEvMjAyNiAwMTo0NX5_XlFQfjEzODF_IH5_QkxSfjA5LzAxLzIwMjYgMDQ6NTB_Qk9NfjA5LzAxLzIwMjYgMDY6NDV_fg--",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BLR",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-09-01T01:45:00",
+                                                    "departure": "2026-08-31T22:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1812",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BLR",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-09-01T01:45:00",
+                                                            "departure": "2026-08-31T22:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1812 DELBLR",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 1",
+                                                            "arrivalTime": "2026-09-01T01:45:00",
+                                                            "arrivalTimeUtc": "2026-08-31T20:15:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T22:55:00",
+                                                            "departureTimeUtc": "2026-08-31T17:25:00",
+                                                            "equipmentType": "7MX",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTgxMn4gfn5ERUx_MDgvMzEvMjAyNiAyMjo1NX5CTFJ_MDkvMDEvMjAyNiAwMTo0NX5_"
+                                            },
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "BLR",
+                                                    "arrival": "2026-09-01T06:45:00",
+                                                    "departure": "2026-09-01T04:50:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1381",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "BLR",
+                                                            "arrival": "2026-09-01T06:45:00",
+                                                            "departure": "2026-09-01T04:50:00"
+                                                        },
+                                                        "flightReference": "20260901 QP1381 BLRBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-09-01T06:45:00",
+                                                            "arrivalTimeUtc": "2026-09-01T01:15:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-09-01T04:50:00",
+                                                            "departureTimeUtc": "2026-08-31T23:20:00",
+                                                            "equipmentType": "7BH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM4MX4gfn5CTFJ_MDkvMDEvMjAyNiAwNDo1MH5CT01_MDkvMDEvMjAyNiAwNjo0NX5_"
+                                            }
+                                        ],
+                                        "stops": 1,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-09-01T06:45:00",
+                                            "estimatedDepartureTime": "2026-08-31T22:55:00",
+                                            "scheduledArrivalTime": "2026-09-01T06:45:00",
+                                            "scheduledDepartureTime": "2026-08-31T22:55:00"
+                                        }
+                                    },
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-09-01T07:10:00",
+                                            "departure": "2026-08-31T22:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflEzfn5RUH5RM083UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCExMDE0",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "Mn5RM35_UVB_UTNPN1JXSVh_MTAwMX5_OX4xfk5CTFJCT00wMDkwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflEzfn5RUH5RM083VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghMTExNQ--",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 3,
+                                                        "status": "Active",
+                                                        "reference": "Mn5RM35_UVB_UTNPN1ZXSVh_MTAwMn5_MTN_MX5OQkxSQk9NMDEzMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            }
+                                        ],
+                                        "flightType": "Connect",
+                                        "journeyKey": "UVB_MTgxMn4gfn5ERUx_MDgvMzEvMjAyNiAyMjo1NX5CTFJ_MDkvMDEvMjAyNiAwMTo0NX5_XlFQfjEzODN_IH5_QkxSfjA5LzAxLzIwMjYgMDU6MjV_Qk9NfjA5LzAxLzIwMjYgMDc6MTB_fg--",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BLR",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-09-01T01:45:00",
+                                                    "departure": "2026-08-31T22:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1812",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BLR",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-09-01T01:45:00",
+                                                            "departure": "2026-08-31T22:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1812 DELBLR",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 1",
+                                                            "arrivalTime": "2026-09-01T01:45:00",
+                                                            "arrivalTimeUtc": "2026-08-31T20:15:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T22:55:00",
+                                                            "departureTimeUtc": "2026-08-31T17:25:00",
+                                                            "equipmentType": "7MX",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTgxMn4gfn5ERUx_MDgvMzEvMjAyNiAyMjo1NX5CTFJ_MDkvMDEvMjAyNiAwMTo0NX5_"
+                                            },
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "BLR",
+                                                    "arrival": "2026-09-01T07:10:00",
+                                                    "departure": "2026-09-01T05:25:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1383",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "BLR",
+                                                            "arrival": "2026-09-01T07:10:00",
+                                                            "departure": "2026-09-01T05:25:00"
+                                                        },
+                                                        "flightReference": "20260901 QP1383 BLRBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-09-01T07:10:00",
+                                                            "arrivalTimeUtc": "2026-09-01T01:40:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-09-01T05:25:00",
+                                                            "departureTimeUtc": "2026-08-31T23:55:00",
+                                                            "equipmentType": "7WH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTM4M34gfn5CTFJ_MDkvMDEvMjAyNiAwNToyNX5CT01_MDkvMDEvMjAyNiAwNzoxMH5_"
+                                            }
+                                        ],
+                                        "stops": 1,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-09-01T07:10:00",
+                                            "estimatedDepartureTime": "2026-08-31T22:55:00",
+                                            "scheduledArrivalTime": "2026-09-01T07:10:00",
+                                            "scheduledDepartureTime": "2026-08-31T22:55:00"
+                                        }
+                                    },
+                                    {
+                                        "designator": {
+                                            "destination": "BOM",
+                                            "origin": "DEL",
+                                            "arrival": "2026-09-01T08:00:00",
+                                            "departure": "2026-08-31T22:55:00"
+                                        },
+                                        "fares": [
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfl4yflExfn5RUH5RMU83UldJWH4xMDAxfn45fjF_TkJMUkJPTTAwOTAwMTB_WCExNjE4",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 2,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83UldJWH4xMDAxfn4xMX4xfk5CTFJERUwwMTEwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 2,
+                                                        "status": "Active",
+                                                        "reference": "Mn5RMX5_UVB_UTFPN1JXSVh_MTAwMX5_OX4xfk5CTFJCT00wMDkwMDEwflg-",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            },
+                                            {
+                                                "fareAvailabilityKey": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfl4yflExfn5RUH5RMU83VldJWH4xMDAyfn4xM34xfk5CTFJCT00wMTMwMDEwflghMTcxOQ--",
+                                                "details": [
+                                                    {
+                                                        "availableCount": 2,
+                                                        "status": "Active",
+                                                        "reference": "MX5Ffn5RUH5FME83VldJWH4xMDAyfn4xNn4xfk5CTFJERUwwMTYwMDEwfg--",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    },
+                                                    {
+                                                        "availableCount": 2,
+                                                        "status": "Active",
+                                                        "reference": "Mn5RMX5_UVB_UTFPN1ZXSVh_MTAwMn5_MTN_MX5OQkxSQk9NMDEzMDAxMH5Y",
+                                                        "serviceBundleSetCode": null,
+                                                        "bundleReferences": null,
+                                                        "ssrReferences": null
+                                                    }
+                                                ],
+                                                "isSumOfSector": true
+                                            }
+                                        ],
+                                        "flightType": "Connect",
+                                        "journeyKey": "UVB_MTgxMn4gfn5ERUx_MDgvMzEvMjAyNiAyMjo1NX5CTFJ_MDkvMDEvMjAyNiAwMTo0NX5_XlFQfjE1MTV_IH5_QkxSfjA5LzAxLzIwMjYgMDY6MjB_Qk9NfjA5LzAxLzIwMjYgMDg6MDB_fg--",
+                                        "segments": [
+                                            {
+                                                "designator": {
+                                                    "destination": "BLR",
+                                                    "origin": "DEL",
+                                                    "arrival": "2026-09-01T01:45:00",
+                                                    "departure": "2026-08-31T22:55:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1812",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BLR",
+                                                            "origin": "DEL",
+                                                            "arrival": "2026-09-01T01:45:00",
+                                                            "departure": "2026-08-31T22:55:00"
+                                                        },
+                                                        "flightReference": "20260831 QP1812 DELBLR",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 1",
+                                                            "arrivalTime": "2026-09-01T01:45:00",
+                                                            "arrivalTimeUtc": "2026-08-31T20:15:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-08-31T22:55:00",
+                                                            "departureTimeUtc": "2026-08-31T17:25:00",
+                                                            "equipmentType": "7MX",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTgxMn4gfn5ERUx_MDgvMzEvMjAyNiAyMjo1NX5CTFJ_MDkvMDEvMjAyNiAwMTo0NX5_"
+                                            },
+                                            {
+                                                "designator": {
+                                                    "destination": "BOM",
+                                                    "origin": "BLR",
+                                                    "arrival": "2026-09-01T08:00:00",
+                                                    "departure": "2026-09-01T06:20:00"
+                                                },
+                                                "identifier": {
+                                                    "identifier": "1515",
+                                                    "carrierCode": "QP",
+                                                    "opSuffix": null
+                                                },
+                                                "legs": [
+                                                    {
+                                                        "designator": {
+                                                            "destination": "BOM",
+                                                            "origin": "BLR",
+                                                            "arrival": "2026-09-01T08:00:00",
+                                                            "departure": "2026-09-01T06:20:00"
+                                                        },
+                                                        "flightReference": "20260901 QP1515 BLRBOM",
+                                                        "legInfo": {
+                                                            "adjustedCapacity": 0,
+                                                            "arrivalTerminal": "Terminal 2",
+                                                            "arrivalTime": "2026-09-01T08:00:00",
+                                                            "arrivalTimeUtc": "2026-09-01T02:30:00",
+                                                            "capacity": 0,
+                                                            "departureTerminal": "Terminal 1",
+                                                            "departureTime": "2026-09-01T06:20:00",
+                                                            "departureTimeUtc": "2026-09-01T00:50:00",
+                                                            "equipmentType": "7AH",
+                                                            "eticket": true
+                                                        },
+                                                        "ssrs": []
+                                                    }
+                                                ],
+                                                "segmentKey": "UVB_MTUxNX4gfn5CTFJ_MDkvMDEvMjAyNiAwNjoyMH5CT01_MDkvMDEvMjAyNiAwODowMH5_"
+                                            }
+                                        ],
+                                        "stops": 1,
+                                        "timings": {
+                                            "estimatedArrivalTime": "2026-09-01T08:00:00",
+                                            "estimatedDepartureTime": "2026-08-31T22:55:00",
+                                            "scheduledArrivalTime": "2026-09-01T08:00:00",
+                                            "scheduledDepartureTime": "2026-08-31T22:55:00"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "validPromoEngineCode": false
+    }
+}

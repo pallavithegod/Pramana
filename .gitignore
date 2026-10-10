@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.uv-cache/
+
+# Env / secrets — NEVER commit
+.env
+.env.*
+!.env.example
+
+# Data artifacts (raw scrapes, local DB, parquet lake) — evidence lives outside git
+data/lake/
+data/raw/
+*.sqlite
+*.sqlite3
+*.duckdb
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite-journal
+# The only database allowed in Git is the deliberately generated, verified
+# read-only judging snapshot. Never force-add the writable lake database.
+!data/deploy/
+!data/deploy/apix.snapshot.sqlite
+!data/deploy/snapshot-manifest.json
+
+# Node (dashboard)
+node_modules/
+.next/
+out/
+.vercel/
+
+# Disposable local dev-server stdout/stderr captures
+apps/dashboard/dashboard_local_*.log
+data/logs/api_local*.log
+
+# One-off local debugging artifacts
+/data/sj_debug.png
+/data/akasa_live_test.json
+/apps/dashboard/trace
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+demo.md
+
+data/deploy/*.tmp*

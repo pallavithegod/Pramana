@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — SaaS-admin restyle (3 Sep 2026, per reference screenshot):
+   white sidebar + light-gray page, 14px card radius, icon bubbles, delta
+   pills, vivid blue primary. Chart series tokens keep the validated palette.
+   Dark mode is a selected theme (own steps), not an inversion; the
+   [data-theme] stamp wins over the OS setting both ways.
+--------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --page: #f3f4f7;
+  --surface: #ffffff;
+  --surface-2: #f7f8fa;
+  --ink: #14161a;
+  --ink-secondary: #5a6472;
+  --ink-muted: #8b93a1;
+  --grid: #e6e8ee;
+  --baseline: #c9cdd6;
+  --hairline: #e9ebf0;
+  --accent: #2f6bea; /* primary buttons, active nav, links */
+  --accent-soft: #e9f0fe;
+  --accent-deep: #123a8f;
+
+  --pill-up-bg: #e3f6ec;
+  --pill-up-fg: #17945a;
+  --pill-down-bg: #fdeaee;
+  --pill-down-fg: #e0435c;
+
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --de-emphasis: #dde1e8;
+  --diverge-neg: #2a78d6;
+  --diverge-mid: #f0efec;
+  --diverge-pos: #e34948;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  --shadow-card: 0 1px 2px rgba(20, 22, 26, 0.04), 0 4px 16px rgba(20, 22, 26, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #101114;
+    --surface: #1a1c20;
+    --surface-2: #202329;
+    --ink: #f4f5f7;
+    --ink-secondary: #b3bac4;
+    --ink-muted: #7d8592;
+    --grid: #2b2e35;
+    --baseline: #3a3e47;
+    --hairline: #272a30;
+    --accent: #5b8df2;
+    --accent-soft: rgba(91, 141, 242, 0.14);
+    --accent-deep: #0e2f73;
+    --pill-up-bg: rgba(23, 148, 90, 0.18);
+    --pill-up-fg: #4ecb8d;
+    --pill-down-bg: rgba(224, 67, 92, 0.16);
+    --pill-down-fg: #f27a90;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --de-emphasis: #3a3e47;
+    --diverge-mid: #383835;
+    --diverge-pos: #e66767;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #101114;
+  --surface: #1a1c20;
+  --surface-2: #202329;
+  --ink: #f4f5f7;
+  --ink-secondary: #b3bac4;
+  --ink-muted: #7d8592;
+  --grid: #2b2e35;
+  --baseline: #3a3e47;
+  --hairline: #272a30;
+  --accent: #5b8df2;
+  --accent-soft: rgba(91, 141, 242, 0.14);
+  --accent-deep: #0e2f73;
+  --pill-up-bg: rgba(23, 148, 90, 0.18);
+  --pill-up-fg: #4ecb8d;
+  --pill-down-bg: rgba(224, 67, 92, 0.16);
+  --pill-down-fg: #f27a90;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --de-emphasis: #3a3e47;
+  --diverge-mid: #383835;
+  --diverge-pos: #e66767;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Devanagari", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tailwind v4 preflight resets buttons to cursor:default — restore pointer on
+   every interactive control. */
+button:not(:disabled),
+[role="button"],
+select,
+summary,
+label[for] {
+  cursor: pointer;
+}
+
+/* Chromium can keep the native option popup white after the app switches to
+   its explicit dark theme. Give native option rows both sides of the color
+   pair so light text is never rendered on the browser's white default. */
+select option {
+  background-color: var(--surface);
+  color: var(--ink);
+}
+
+/* the "API" affordance — deliberately loud: it IS the product's headline
+   integration feature (every chart is reproducible via one API call) */
+.btn-api {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 86px; /* fits "✓ Copied" — no layout shift on feedback */
+  border: 1.5px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.btn-api:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+/* delta pills — screenshot-style */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.pill-up {
+  background: var(--pill-up-bg);
+  color: var(--pill-up-fg);
+}
+.pill-down {
+  background: var(--pill-down-bg);
+  color: var(--pill-down-fg);
+}
+.pill-flat {
+  background: var(--surface-2);
+  color: var(--ink-secondary);
+}
+
+/* sidebar */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+  transition: background 120ms;
+}
+.nav-item:hover {
+  background: var(--surface-2);
+}
+.nav-item.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+}
+
+/* icon bubble on stat cards */
+.icon-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

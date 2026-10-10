@@ -1,0 +1,257 @@
+{
+    "jrneys": [
+        {
+            "segs": [
+                {
+                    "bonds": [
+                        {
+                            "Legs": [
+                                {
+                                    "airCode": "SG",
+                                    "airName": "SpiceJet",
+                                    "arrDT": "Wed-02Sep2026",
+                                    "arrTer": "1",
+                                    "FlightDetailRefKey": "SG~ 802~ ~~DEL~09/01/2026 22:30~BOM~09/02/2026 00:50~~",
+                                    "ProviderCode": "SG` 802` ``DEL`09/01/2026 22:30`BOM`09/02/2026 00:50``!0`I` `SG`IJEU0`2020``0`1445``X!!SG`Boeing 737 (Narrow-body)`1`1`Kgs`15`Economy``SG`1D`0`False`0``````02h 20m`IJEU0`I`235",
+                                    "Group": "0",
+                                    "arrTM": "00:50",
+                                    "cabin": "Economy",
+                                    "currCode": "INR",
+                                    "depDT": "Tue-01Sep2026",
+                                    "depTer": "1D",
+                                    "depTM": "22:30",
+                                    "dest": "BOM|Mumbai|India",
+                                    "org": "DEL|New Delhi|India",
+                                    "duration": "02h 20m",
+                                    "fareCls": "I",
+                                    "fltNum": " 802",
+                                    "EquipmentType": "Boeing 737 (Narrow-body)",
+                                    "stops": "0",
+                                    "LayoverAt": "",
+                                    "LayoverDuration": "",
+                                    "OperatedBy": "",
+                                    "BaggageUnit": "Kgs",
+                                    "BaggageWeight": "15",
+                                    "HBaggageUnit": "Kgs",
+                                    "HBaggageWeight": "7",
+                                    "IsSelfT": false,
+                                    "SelfTransfer": ""
+                                }
+                            ],
+                            "cntLeg": 1,
+                            "conDtl": "",
+                            "JrnyTm": "02h 20m",
+                            "bndDTL": "22:30|DEL,New Delhi,India|00:50|BOM,Mumbai,India|SG|SpiceJet| 802|02h 20m|DEL-BOM|2026-08-31|2026-09-01|Non-Stop",
+                            "Refundable": "Refundable"
+                        }
+                    ],
+                    "Fare": {
+                        "BscFr": 4863,
+                        "fareName": "SpiceSaver",
+                        "TtlFrWthMkp": 6408,
+                        "TtlTxWthMkp": 1545,
+                        "DueAmount": 0,
+                        "RefundAmount": 0,
+                        "ChgPenalty": 0,
+                        "KeyDUE_REF": "e9wrgPFTXos=",
+                        "lstPxPF": [
+                            {
+                                "BaggUnit": "KG",
+                                "BaggWeight": "15",
+                                "BscFr": 4863,
+                                "CanPenlty": 4899,
+                                "ChanPenlty": 2999,
+                                "FrBassCode": "",
+                                "MarkUP": "0",
+                                "TDS": "0",
+                                "cashback": 0,
+                                "ServiceFee": 0,
+                                "commision": 0,
+                                "ISEXSeatFare": false,
+                                "PaxType": "Adult",
+                                "PaxCount": 1,
+                                "exSeatFare": 0,
+                                "agent_convFees": 0,
+                                "Refundable": "true",
+                                "TtlFare": 6408,
+                                "TtlTax": 1545,
+                                "dfValue": "600",
+                                "BaseTransactionAmount": 0,
+                                "TransactionAmount": 0,
+                                "lstTxDt": [
+                                    {
+                                        "Amt": 100,
+                                        "ChgCd": "RCS",
+                                        "ChgeTp": "RCS"
+                                    },
+                                    {
+                                        "Amt": 85,
+                                        "ChgCd": "TRF",
+                                        "ChgeTp": "TRF"
+                                    },
+                                    {
+                                        "Amt": 599,
+                                        "ChgCd": "YQ",
+                                        "ChgeTp": "YQ"
+                                    },
+                                    {
+                                        "Amt": 236,
+                                        "ChgCd": "ASF",
+                                        "ChgeTp": "ASF"
+                                    },
+                                    {
+                                        "Amt": 152,
+                                        "ChgCd": "UDF",
+                                        "ChgeTp": "UDF"
+                                    },
+                                    {
+                                        "Amt": 89,
+                                        "ChgCd": "AAT",
+                                        "ChgeTp": "AAT"
+                                    },
+                                    {
+                                        "Amt": 142,
+                                        "ChgCd": "CGST07",
+                                        "ChgeTp": "CGST07"
+                                    },
+                                    {
+                                        "Amt": 142,
+                                        "ChgCd": "SGST07",
+                                        "ChgeTp": "SGST07"
+                                    }
+                                ],
+                                "IsZeroCancellation": false,
+                                "ZeroCancellationCharge": 0,
+                                "ZeroCancellationValidity": ""
+                            }
+                        ],
+                        "IsExSeatFare": false,
+                        "ExSeatFare": null,
+                        "CDValue": 0,
+                        "TTLFr": 6408,
+                        "BrandKeys": "",
+                        "PriceLock": {
+                            "durations": [
+                                {
+                                    "price": {},
+                                    "type": "Hours",
+                                    "time": "4"
+                                }
+                            ]
+                        },
+                        "lstTxDt": [
+                            {
+                                "Amt": 100,
+                                "ChgCd": "RCS",
+                                "ChgeTp": "RCS"
+                            },
+                            {
+                                "Amt": 85,
+                                "ChgCd": "TRF",
+                                "ChgeTp": "TRF"
+                            },
+                            {
+                                "Amt": 599,
+                                "ChgCd": "YQ",
+                                "ChgeTp": "YQ"
+                            },
+                            {
+                                "Amt": 236,
+                                "ChgCd": "ASF",
+                                "ChgeTp": "ASF"
+                            },
+                            {
+                                "Amt": 152,
+                                "ChgCd": "UDF",
+                                "ChgeTp": "UDF"
+                            },
+                            {
+                                "Amt": 89,
+                                "ChgCd": "AAT",
+                                "ChgeTp": "AAT"
+                            },
+                            {
+                                "ChgCd": "GST",
+                                "ChgeTp": "GST(Airline)",
+                                "Amt": 284
+                            }
+                        ],
+                        "ttlDiscount": 5808
+                    },
+                    "FareRule": "CAN-BEF 8760_96:3899|CAN-BEF 96_4:4899|CHG-BEF 8760_96:2999|CHG-BEF 96_4:2999|EMTFee-300|CANCEL-BEF 8760_96:3899|CANCEL-BEF 96_4:4899|CHANGE-BEF 8760_96:2999|CHANGE-BEF 96_4:2999",
+                    "FareTypeInd": "0",
+                    "searchId": "235,ADT:BF=4863 Tax=1545,CHD:BF=0 Tax=0,INF:BF=0 Tax=0,DFValue=1,DFValue=1,APFV=6408`1545`4863`4899`2999`0`600`IXXX0``KG`15`True`0`0`0`0`,ATB=`RCS:100`TRF:85`YQ:599`ASF:236`UDF:152`AAT:89`CGST07:20`CGST07:122`SGST07:20`SGST07:122,CTB=,ITB=,TBA=4863,TTA=1545,TFA=6408,CCode`hbwxhUrYYXBtMJSwwE4VAw==,RTSearch=0,POS=IN,RBD=I,PCODE=",
+                    "agent_convFees": 0,
+                    "EngineId": 1,
+                    "segDTL": "22:30|DEL,New Delhi,India|00:50|BOM,Mumbai,India|SG|SpiceJet| 802|02h 20m|Non-Stop|6408|(1 Seats left)|DEL-BOM|Tue-01Sep2026|Wed-02Sep2026",
+                    "IsHndBagg": false,
+                    "VisaInfo": "",
+                    "FN": "SpiceSaver",
+                    "Farebenefit": [
+                        "Cabin baggage included",
+                        "Check-in baggage included",
+                        "Cancellation fees apply",
+                        "Date change chargeable"
+                    ],
+                    "FarebenefitFile": null,
+                    "FarebenefitNew": null,
+                    "FarebenefitNewFile": null,
+                    "IsGstM": false,
+                    "IsBranded": false,
+                    "CDValue": 0,
+                    "brandFareKey": "",
+                    "lstCanPo": [
+                        {
+                            "CP": "3899",
+                            "CH": "2999",
+                            "D": "96 hours to 8760 hours",
+                            "CD": "Cancel Before 96 hours of departure time.",
+                            "RD": "Reschedule before 96 hours of after departure time."
+                        },
+                        {
+                            "CP": "4899",
+                            "CH": "2999",
+                            "D": "4 hours to 96 hours",
+                            "CD": "Cancel within 96 hours & before 4 hours of departure time.",
+                            "RD": "Reschedule within 96 hours & before 4 hours of departure time."
+                        }
+                    ],
+                    "CouponCode": "",
+                    "ItineraryKey": "Tup/jFGZj8svCunXpfC7puywg06NR+9xqxma+fTf0Ls=",
+                    "CouponCodeList": "EASEFLY",
+                    "isAddCL": true,
+                    "CpnTxtS": "Use this coupon and get Rs.600 OFF on your flight booking.",
+                    "TotalFare": 6408,
+                    "DiscountAmount": 600,
+                    "CpnConviFees": 0,
+                    "segKey_Api": "22:30|DEL|00:50|BOM|SG|SpiceJet| 802|02h 20m||01Sep2026|2026-09-01|1|6408|1|0|0|0|True|OutBound|0|253e8510-9795-4d1b-9eb3-347dc1712163|EASEFLY|(1 Seats left)||false|||0~235,ADT:BF=4863 Tax=1545,CHD:BF=0 Tax=0,INF:BF=0 Tax=0,DFValue=1,DFValue=1,APFV=6408`1545`4863`4899`2999`0`600`IXXX0``KG`15`True`0`0`0`0`,ATB=`RCS:100`TRF:85`YQ:599`ASF:236`UDF:152`AAT:89`CGST07:20`CGST07:122`SGST07:20`SGST07:122,CTB=,ITB=,TBA=4863,TTA=1545,TFA=6408,CCode`hbwxhUrYYXBtMJSwwE4VAw==,RTSearch=0,POS=IN,RBD=I,PCODE=|Tup/jFGZj8svCunXpfC7puywg06NR+9xqxma+fTf0Ls=|false|CAN-BEF 8760_96:3899|CAN-BEF 96_4:4899|CHG-BEF 8760_96:2999|CHG-BEF 96_4:2999|EMTFee-300|CANCEL-BEF 8760_96:3899|CANCEL-BEF 96_4:4899|CHANGE-BEF 8760_96:2999|CHANGE-BEF 96_4:2999#SG| 802|22:30|Tue-01Sep2026|Wed-02Sep2026|00:50|I|DEL|BOM|1|1D|0|SKOb/nLs1ygFkesMq2TIEo0Z0Zp6TMBC+4eg1VLUVOYM02FP0r4fiPCApqBqakwBc2RwxJSH0GU=|SG` 802` ``DEL`09/01/2026 22:30`BOM`09/02/2026 00:50``!0`I` `SG`IJEU0`2020``0`1445``X!!SG`Boeing 737 (Narrow-body)`1`1`Kgs`15`Economy``SG`1D`0`False`0``````02h 20m`IJEU0`I`235|02h 20m|Boeing 737 (Narrow-body)|15|Kgs|Economy|0|||7|Kgs||@KG|15|4863.0|4899|2999||0|0|True|6408.0|1545.0|6408|0|0|6408|600|0.0||True||0.0|0.0|0.0|SpiceSaver|0.0|True|0.0||0|600!RCS,100.0*TRF,85.0*YQ,599.0*ASF,236.0*UDF,152.0*AAT,89.0*CGST07,142.0*SGST07,142.0",
+                    "segKey": "x6KhvCwJ7ZwZ9+Ku7DqjadvhQHKtxvR5rufDMYpuZEDx27pe2I9RZQgj/QK1g9qX5zZwBnpBIRv4rR/7b+6woqp07mNz0fZz4KvvaDkJjScKDRxV+sbuNuIEIdO/QlUT/gvQf3/WByE+2uaxMYrAkyTy3AoQ+Y0xwFymtSbnRqwulOsRM0dkg5mzLMh+msIG53OyV0+hhG/XXG0fOynaT1OzYU9gi/+HrK5LHaOAacdDozXYUBJHFoxabeecr4q9J27A+KGe2OKWMC81G7RRax7cvxatGTZ84wExLFiiYsxwYQUQGz0Qw3azGnk81yyRM1ZbaQNnqw0hl2kHaB2Qjyv40fL2zMBEltPm/Sw0tJvB2vGI3SlsdjXy+nqTrimnfn11FqTao0i4HvHaj5ACjO5xi/kf2tton3/3AeeGFgl+CCajFqIL/BupqqMr9zWKvBfEdqz05ZFN38r3aNqgiPZM9IYU9FWpkgxz9ldRL72nhxCJi0EDjG/du3atBQexL7lSvpHyG8c7cEUZzn52m67XS9/5hbQ2Lg94dW3mGiqc4+UQ07j5r3OQsl0pRjxB0LjZaeNxUy06ri77N9Aey8iCL0EWzvNvzx6EZPdA0N+pP3cPZ9n6wQx1Jpmp7vW1fJBY7d5px/Ej2nVzLig2AlxEtqd6AVVr4HQmB9VMjJz5vUL9+SAA6xFS6f5dEwz+5HeiA+a/XERRqnJ3HoSe0iSApfocUJ2vxW+ZIq0Sj5PPYFc6OQFauOIdJ5XsqEoQuR22gm65W0FVPu5UaFMD/OlnePEB/n44aku2BbszaaKR+hc6PNGmKLlkVIzqEfYVjx8Sh/rTRXi6bDoAl8fZoVbep+jlSAugtXVylD5wycgqYkcmROp+plbep+jlSAug29QBSz7ugY8+PBxv7M5+MUJIT8298+U9KDH1TwIvTPc+PBxv7M5+MdENxfSJIJoYswQT5bnAuQrN4HLzdgKi5sxitN1uh/VFDrn9+n2/d8kGyVIbcyuLK0T555b3iHEcMj+S9iOI99sPGV+r6eQf18b/orzWXLx7easEuyaSdi9XY8vHDxHlS6q2bV9sQNmPX/J9TUOYFcEqvHLNAyICu1ze0xjr67PeBOouge1YeNiYIAFhpGQVs9ag0wcKy2S+7nMLcaHJz7/u6Z4W5OYoKgrOWJapn6Xx+ptC8qMBZD2Qpycct+FlBufFeyD2+Zah02/KuMSrybRycNhsQMEm+KlXnuwSijs6gcwLi+L3Oi37ayOCIuOKt82PuS5aQHbff1XBIcfaSKcTGVY/7gsKnnh5OLSRc2nzjw0aRl3ig19CQ8raIQEU9fuaedJ7+FlSflQcdnr6THCzYhNusO2HEhT+pDmeLuYU7lY6ARX3arRuINb3MrtODoXahTOWnbltHnGOmW22+nowFzouBIOlhSv7FUhGDQGPTJ07xF4lZzMhvCtHFtbdPzkyYrQjSYq8sfC6ai3tA2ztuazYbc+d7k4ttejGaA4TERTUDfyJYxTx9xGmIW5tOdYsa+7+GGBdNwEmBH9JxSDIYy/nlWmALFMSjNMTGHcFAubAuFHCGeIY12Z2A6VrB81ctvkbsmnCynVurDaHtSi5JwQkHYgliOz9o1xgliNUl/T6z7zBrdwuY+pN0w2kdK5dkqNeYJ11vRZbzGJxoK9QEX8a8Ka+vO301hcID29rlxU4GpDodmiUXm5njAunO63UhSFSMmLjJvIGyhBXbnT3OukeDA0g4g==",
+                    "IsRoundTrip": false,
+                    "Ssn": "DELBOM0109202600000010Spicjet57f4bfc09a894e99a5b252d82748cee1EMTMOB31082026233844250",
+                    "Remark": ""
+                }
+            ]
+        }
+    ],
+    "hdr": "",
+    "err": null,
+    "chd": 0,
+    "adt": 1,
+    "inf": 0,
+    "OldFare": 6408,
+    "TraceID": "253e8510-9795-4d1b-9eb3-347dc1712163",
+    "MinPrice": 0,
+    "MaxPrice": 0,
+    "IsDomestic": true,
+    "location": "undefined|EMT",
+    "IsDefalutInsurance": false,
+    "AddonOnPopOnTransaction": true,
+    "IsInsurance": true,
+    "ConviFees": 449,
+    "IsRepriceOnTransaction": true,
+    "IsConvineesFeeOthers": true,
+    "holdSessionValue": "0",
+    "MATA_PRICE_MATCHING": false,
+    "FinalConFee": 0,
+    "FinalDiscount": 600
+}

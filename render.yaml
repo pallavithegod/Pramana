@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: air-sankhyiki-api
+    runtime: python
+    region: singapore
+    plan: free
+    autoDeploy: false
+    buildCommand: pip install uv && uv sync --frozen --no-dev --project apps/api
+    startCommand: uv run --frozen --project apps/api uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: APIX_READ_ONLY
+        value: "1"
+      - key: APIX_SQLITE_IMMUTABLE
+        value: "1"
+      - key: APIX_DB_PATH
+        value: data/deploy/apix.snapshot.sqlite
+      - key: APIX_SNAPSHOT_MANIFEST
+        value: data/deploy/snapshot-manifest.json
+      - key: APIX_REQUIRE_AUTH
+        value: "0"
+      - key: APIX_CORS_ORIGINS
+        sync: false

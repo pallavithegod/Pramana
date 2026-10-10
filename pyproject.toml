@@ -1,0 +1,32 @@
+[project]
+name = "air-sankhyiki"
+version = "0.1.0"
+description = "Air-Sankhyiki — Real-time Airfare Price Index (APIx) for India | SIH26056 (MoSPI/DIID)"
+requires-python = ">=3.12"
+dependencies = [
+    "playwright>=1.62.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "packages/apix_index",
+    "services/collectors",
+    "apps/api",
+]
+
+[tool.uv.sources]
+apix-index = { workspace = true }
+collectors = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["packages", "services", "apps"]
