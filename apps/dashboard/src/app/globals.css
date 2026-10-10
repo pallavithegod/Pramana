@@ -1,260 +1,392 @@
 @import "tailwindcss";
 
-/* ---------------------------------------------------------------------------
-   Design tokens — SaaS-admin restyle (3 Sep 2026, per reference screenshot):
-   white sidebar + light-gray page, 14px card radius, icon bubbles, delta
-   pills, vivid blue primary. Chart series tokens keep the validated palette.
-   Dark mode is a selected theme (own steps), not an inversion; the
-   [data-theme] stamp wins over the OS setting both ways.
---------------------------------------------------------------------------- */
 :root {
-  color-scheme: light;
-  --page: #f3f4f7;
-  --surface: #ffffff;
-  --surface-2: #f7f8fa;
-  --ink: #14161a;
-  --ink-secondary: #5a6472;
-  --ink-muted: #8b93a1;
-  --grid: #e6e8ee;
-  --baseline: #c9cdd6;
-  --hairline: #e9ebf0;
-  --accent: #2f6bea; /* primary buttons, active nav, links */
-  --accent-soft: #e9f0fe;
-  --accent-deep: #123a8f;
-
-  --pill-up-bg: #e3f6ec;
-  --pill-up-fg: #17945a;
-  --pill-down-bg: #fdeaee;
-  --pill-down-fg: #e0435c;
-
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --series-4: #eda100;
-  --de-emphasis: #dde1e8;
-  --diverge-neg: #2a78d6;
-  --diverge-mid: #f0efec;
-  --diverge-pos: #e34948;
-  --status-good: #0ca30c;
-  --status-warning: #fab219;
-  --status-serious: #ec835a;
-  --status-critical: #d03b3b;
-
-  --shadow-card: 0 1px 2px rgba(20, 22, 26, 0.04), 0 4px 16px rgba(20, 22, 26, 0.04);
+  color-scheme:light;
+  --ink:#182635;
+  --muted:#70808e;
+  --line:#e0e6e9;
+  --accent:#087f69
 }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --page: #101114;
-    --surface: #1a1c20;
-    --surface-2: #202329;
-    --ink: #f4f5f7;
-    --ink-secondary: #b3bac4;
-    --ink-muted: #7d8592;
-    --grid: #2b2e35;
-    --baseline: #3a3e47;
-    --hairline: #272a30;
-    --accent: #5b8df2;
-    --accent-soft: rgba(91, 141, 242, 0.14);
-    --accent-deep: #0e2f73;
-    --pill-up-bg: rgba(23, 148, 90, 0.18);
-    --pill-up-fg: #4ecb8d;
-    --pill-down-bg: rgba(224, 67, 92, 0.16);
-    --pill-down-fg: #f27a90;
-    --series-1: #3987e5;
-    --series-2: #d95926;
-    --series-3: #199e70;
-    --series-4: #c98500;
-    --de-emphasis: #3a3e47;
-    --diverge-mid: #383835;
-    --diverge-pos: #e66767;
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
-  }
+* {
+  box-sizing:border-box
 }
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #101114;
-  --surface: #1a1c20;
-  --surface-2: #202329;
-  --ink: #f4f5f7;
-  --ink-secondary: #b3bac4;
-  --ink-muted: #7d8592;
-  --grid: #2b2e35;
-  --baseline: #3a3e47;
-  --hairline: #272a30;
-  --accent: #5b8df2;
-  --accent-soft: rgba(91, 141, 242, 0.14);
-  --accent-deep: #0e2f73;
-  --pill-up-bg: rgba(23, 148, 90, 0.18);
-  --pill-up-fg: #4ecb8d;
-  --pill-down-bg: rgba(224, 67, 92, 0.16);
-  --pill-down-fg: #f27a90;
-  --series-1: #3987e5;
-  --series-2: #d95926;
-  --series-3: #199e70;
-  --series-4: #c98500;
-  --de-emphasis: #3a3e47;
-  --diverge-mid: #383835;
-  --diverge-pos: #e66767;
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
-}
-
 body {
-  background: var(--page);
-  color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Devanagari", sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
+  margin:0;
+  background:#f5f7f8;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:14px
 }
-
-.tnum {
-  font-variant-numeric: tabular-nums;
+button,textarea {
+  font:inherit
 }
-
-/* Tailwind v4 preflight resets buttons to cursor:default — restore pointer on
-   every interactive control. */
-button:not(:disabled),
-[role="button"],
-select,
-summary,
-label[for] {
-  cursor: pointer;
+button {
+  cursor:pointer
 }
-
-/* Chromium can keep the native option popup white after the app switches to
-   its explicit dark theme. Give native option rows both sides of the color
-   pair so light text is never rendered on the browser's white default. */
-select option {
-  background-color: var(--surface);
-  color: var(--ink);
+button:disabled {
+  opacity:.45;
+  cursor:default
 }
-
-/* the "API" affordance — deliberately loud: it IS the product's headline
-   integration feature (every chart is reproducible via one API call) */
-.btn-api {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  min-width: 86px; /* fits "✓ Copied" — no layout shift on feedback */
-  border: 1.5px solid var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
-  border-radius: 10px;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+button:focus-visible,a:focus-visible,textarea:focus-visible {
+  outline:2px solid #087f69;
+  outline-offset:3px
 }
-.btn-api:hover {
-  background: var(--accent);
-  color: #fff;
+.workspace {
+  height:100dvh;
+  display:flex;
+  flex-direction:column
 }
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: 14px;
-  box-shadow: var(--shadow-card);
+.workspace-header {
+  height:76px;
+  flex-shrink:0;
+  border-bottom:1px solid var(--line);
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 32px
 }
-
+.brand {
+  display:flex;
+  align-items:center;
+  gap:13px
+}
+.brand strong {
+  font-size:22px;
+  letter-spacing:-1px
+}
+.brand-mark {
+  background:#142a2a;
+  color:#78e4c3;
+  font-size:24px;
+  border-radius:9px;
+  width:38px;
+  height:38px;
+  text-align:center;
+  line-height:34px
+}
+.workspace-tag {
+  margin-left:12px;
+  padding-left:22px;
+  border-left:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px
+}
+.model-status {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font:11px monospace;
+  color:var(--muted)
+}
+.model-status i {
+  width:7px;
+  height:7px;
+  background:#aaa;
+  border-radius:50%
+}
+.model-status i.ready {
+  background:#13aa82
+}
+.workspace-body {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 370px;
+  flex:1;
+  min-height:0
+}
+.chat-panel {
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  max-width:1100px;
+  width:100%;
+  margin:auto;
+  height:100%
+}
+.chat-scroll {
+  overflow:auto;
+  flex:1;
+  padding:40px 50px
+}
+.welcome {
+  max-width:660px;
+  margin:5vh auto 0
+}
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  font-weight: 500;
+  font:11px monospace;
+  letter-spacing:2px;
+  color:var(--accent)
+}
+h1 {
+  font-size:clamp(36px,4vw,54px);
+  letter-spacing:-2px;
+  font-weight:600;
+  margin:14px 0
+}
+.welcome>p {
+  font-size:16px;
+  line-height:1.8;
+  color:#63737f;
+  max-width:530px
+}
+.examples {
+  margin-top:30px;
+  display:grid;
+  gap:10px
+}
+.examples button {
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:white;
+  text-align:left;
+  display:flex;
+  gap:16px;
+  padding:19px;
+  align-items:center;
+  line-height:1.5
+}
+.examples span {
+  font:11px monospace;
+  color:var(--muted)
+}
+.examples b {
+  margin-left:auto;
+  color:var(--accent)
+}
+.examples button:hover {
+  border-color:#8ebcb2
+}
+.capabilities {
+  margin-top:24px;
+  font:11px monospace;
+  color:var(--muted)
+}
+.composer {
+  margin:0 35px 25px;
+  border:1px solid #ccd8dd;
+  border-radius:12px;
+  background:white;
+  padding:17px 20px;
+  box-shadow:0 5px 25px #15263608
+}
+.composer label {
+  font:10px monospace;
+  color:var(--muted);
+  letter-spacing:1px
+}
+.composer textarea {
+  display:block;
+  width:100%;
+  resize:vertical;
+  min-height:65px;
+  max-height:180px;
+  border:0;
+  outline:0;
+  background:none;
+  line-height:1.7;
+  padding:12px 0
+}
+.composer-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:var(--muted)
+}
+.composer button {
+  border:0;
+  border-radius:7px;
+  background:#142b2a;
+  color:white;
+  padding:10px 18px;
+  font-size:12px
+}
+.telemetry {
+  background:#111e2b;
+  color:#cad9e0;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  border-left:1px solid #253341;
+  font-family:monospace
+}
+.console-header {
+  padding:25px 23px 10px;
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  letter-spacing:1px
+}
+.console-header>span:last-child {
+  color:#738b99
+}
+.console-header .live {
+  color:#6be7bd!important
+}
+.console-hint {
+  padding:0 23px;
+  color:#748e9e;
+  font-size:10px;
+  line-height:1.8
+}
+.trace {
+  overflow:auto;
+  flex:1;
+  padding:18px 23px
+}
+.trace-empty {
+  margin-top:30px;
+  color:#5e7889;
+  font-size:11px;
+  line-height:2
+}
+.trace-event {
+  border-left:1px solid #365264;
+  padding:0 0 24px 15px
+}
+.trace-event time {
+  color:#647f90;
+  font-size:9px
+}
+.trace-event strong {
+  display:block;
+  color:#bddacd;
+  font-size:11px;
+  line-height:1.8;
+  overflow-wrap:anywhere;
+  margin-top:5px
+}
+.trace-event p {
+  color:#7895a6;
+  font-size:10px;
+  line-height:1.7;
+  margin:4px 0;
+  overflow-wrap:anywhere
+}
+.console-footer {
+  border-top:1px solid #27394a;
+  padding:20px 23px;
+  font-size:9px;
+  color:#627e90;
+  letter-spacing:.8px
+}
+.console-footer span {
+  display:block;
+  margin-top:8px;
+  color:#9eb6bd
+}
+.message {
+  margin-bottom:28px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:25px
+}
+.message-label {
+  font:10px monospace;
+  letter-spacing:1px;
+  color:var(--accent);
+  margin-bottom:12px
+}
+.user .message-label {
+  color:var(--muted)
+}
+.message-body {
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  line-height:1.8
+}
+.working,.error {
+  padding:18px;
+  border-radius:8px;
+  background:#e6efed;
+  font-size:12px;
+  margin-bottom:16px
+}
+.error {
+  background:#ffebe6;
+  color:#8a3b2a
+}
+.report-meta {
+  font:10px monospace;
+  color:var(--muted);
+  margin:16px 0
+}
+summary {
+  cursor:pointer;
+  font-size:12px;
+  margin:12px 0
+}
+.signal {
+  border:1px solid var(--line);
+  padding:12px;
+  border-radius:7px;
+  margin:8px 0
+}
+.signal strong {
+  font-size:12px
+}
+.signal p {
+  font-size:12px;
+  color:var(--accent)
+}
+.signal small {
+  color:var(--muted);
+  font:10px monospace
+}
+.source {
+  display:block;
+  color:var(--accent);
+  font-size:11px;
+  margin:8px 0;
+  overflow-wrap:anywhere
+}
+@media(max-width:1000px) {
+  .workspace-body {
+  grid-template-columns:minmax(0,1fr) 300px
+}
+.chat-scroll {
+  padding:30px
+}
+.workspace-tag {
+  display:none
+}
+.workspace-header {
+  padding:0 20px
 }
 
-/* delta pills — screenshot-style */
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  border-radius: 999px;
-  padding: 2px 8px;
-  font-size: 11.5px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
 }
-.pill-up {
-  background: var(--pill-up-bg);
-  color: var(--pill-up-fg);
+@media(max-width:760px) {
+  .workspace {
+  height:auto;
+  min-height:100dvh
 }
-.pill-down {
-  background: var(--pill-down-bg);
-  color: var(--pill-down-fg);
+.workspace-body {
+  display:flex;
+  flex-direction:column
 }
-.pill-flat {
-  background: var(--surface-2);
-  color: var(--ink-secondary);
+.chat-panel {
+  min-height:75dvh
 }
-
-/* sidebar */
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 13.5px;
-  color: var(--ink-secondary);
-  transition: background 120ms;
+.chat-scroll {
+  padding:28px 20px
 }
-.nav-item:hover {
-  background: var(--surface-2);
+.composer {
+  margin:0 15px 20px
 }
-.nav-item.active {
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 600;
+.telemetry {
+  height:360px
+}
+.workspace-header {
+  height:auto;
+  min-height:76px;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:15px
+}
+.model-status {
+  font-size:9px
+}
+.welcome {
+  margin-top:15px
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 10px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-}
-.btn-primary:hover {
-  filter: brightness(1.06);
-}
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: 10px;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink);
-}
-.btn-ghost:hover {
-  background: var(--surface-2);
-}
-
-/* icon bubble on stat cards */
-.icon-bubble {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }

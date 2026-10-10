@@ -1,7 +1,7 @@
 [project]
-name = "air-sankhyiki"
+name = "pramana-workspace"
 version = "0.1.0"
-description = "Air-Sankhyiki — Real-time Airfare Price Index (APIx) for India | SIH26056 (MoSPI/DIID)"
+description = "Pramana local econometric agent and open-source SerpApi SDK"
 requires-python = ">=3.12"
 dependencies = [
     "playwright>=1.62.0",
@@ -12,11 +12,13 @@ members = [
     "packages/apix_index",
     "services/collectors",
     "apps/api",
+    "packages/pramana_sdk",
 ]
 
 [tool.uv.sources]
 apix-index = { workspace = true }
 collectors = { workspace = true }
+pramana-sdk = { workspace = true }
 
 [dependency-groups]
 dev = [

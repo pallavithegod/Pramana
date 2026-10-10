@@ -11,6 +11,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+!.env.pramana.example
 
 # Data artifacts (raw scrapes, local DB, parquet lake) — evidence lives outside git
 data/lake/
@@ -51,3 +52,7 @@ Thumbs.db
 demo.md
 
 data/deploy/*.tmp*
+
+# Generated frontend compiler cache and build distributions
+*.tsbuildinfo
+dist/

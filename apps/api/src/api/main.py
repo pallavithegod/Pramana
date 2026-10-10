@@ -1,14 +1,4 @@
-"""Air-Sankhyiki API — a prototype using api.mospi.gov.in-style envelopes.
-
-MoSPI envelope (verified live 29 Aug 2026):
-    {"data": [...], "meta_data": {page, totalRecords, totalPages, recordPerPage},
-     "msg": "Data fetched successfully", "statusCode": true}
-
-The live local MVP serves collected quotes, APIx, PRISM, nowcast, competition,
-and ledger-health endpoints. Optional 15-minute demo authentication mirrors the
-shape of the MoSPI flow; production government integration still requires
-security, schema, and deployment review by the owning authority.
-"""
+"""Pramana agent API and backward-compatible empirical signal endpoints."""
 
 from __future__ import annotations
 
@@ -21,6 +11,7 @@ import secrets
 import sqlite3
 import threading
 import time
+from contextlib import asynccontextmanager
 
 from collectors.storage import DB_PATH, read_only_enabled
 from collectors.storage import connect as lake_connect
@@ -30,20 +21,33 @@ from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
 from pydantic import BaseModel
 
+from api.chat import router as chat_router
+
+
+@asynccontextmanager
+async def lifespan(application: FastAPI):
+    warm_cache()
+    yield
+
+
 app = FastAPI(
-    title="Air-Sankhyiki APIx",
-    description="Real-time Airfare Price Index for India — MoSPI-mirror conventions",
+    title="Pramana — Autonomous Econometric Agent",
+    description="Local Ollama agent, SerpApi tools and empirical price signals",
     version="0.1.0",
+    lifespan=lifespan,
 )
 
 # Dashboard (Next.js dev server / Vercel) reads these endpoints client-side.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.environ.get("APIX_CORS_ORIGINS", "*").split(","),
+    allow_origins=os.environ.get(
+        "APIX_CORS_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000"
+    ).split(","),
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 app.add_middleware(GZipMiddleware, minimum_size=1_000)
+app.include_router(chat_router)
 
 
 # --------------------------------------------------------------------------- #
@@ -160,9 +164,9 @@ def cached(fn):
 
 
 # --------------------------------------------------------------------------- #
-# Auth — mirrors api.mospi.gov.in: signup → login → 15-minute bearer token.
+# Auth — legacy demo authentication: signup → login → 15-minute bearer token.
 # Enforcement is off by default (APIX_REQUIRE_AUTH=1 turns it on) so the public
-# dashboard works while the MoSPI-parity flow stays demo-able.
+# dashboard works while the legacy authentication flow stays demo-able.
 # --------------------------------------------------------------------------- #
 
 TOKEN_TTL_S = 15 * 60
@@ -206,7 +210,7 @@ def _jwt_decode(token: str) -> dict | None:
 
 @app.middleware("http")
 async def auth_middleware(request: Request, call_next):
-    """MoSPI-parity enforcement: when APIX_REQUIRE_AUTH=1, every /api/apix/*
+    """Legacy analytical API authentication: when APIX_REQUIRE_AUTH=1, every /api/apix/*
     call needs a live bearer token from /api/auth/login (15-min expiry)."""
     if _REQUIRE_AUTH and request.url.path.startswith("/api/apix/"):
         token = request.headers.get("authorization", "").removeprefix("Bearer ").strip()
@@ -295,7 +299,7 @@ def get_quotes(
     route_code: str | None = Query(default=None, description="e.g. DEL-BOM"),
     carrier_code: str | None = Query(default=None, description="IATA code, e.g. QP"),
     leadtime_code: int | None = Query(default=None, description="advance window: 1|7|15|30|45"),
-    limit: int = Query(default=100, le=1000),
+    limit: int = Query(default=100, ge=1, le=1000),
     page: int = Query(default=1, ge=1),
 ) -> dict:
     where, params = ["1=1"], []
@@ -363,7 +367,7 @@ def get_fair_fare_panel(route_code: str = Query(description="e.g. DEL-BOM")) -> 
 @app.get("/api/apix/getAPIxIndex")
 @cached
 def get_apix_index(
-    limit: int = Query(default=100, le=1000),
+    limit: int = Query(default=100, ge=1, le=1000),
     page: int = Query(default=1, ge=1),
     leadtime_code: int | None = Query(
         default=None, description="restrict to one advance window: 1|7|15|30|45"
@@ -371,7 +375,7 @@ def get_apix_index(
 ) -> dict:
     """Daily headline APIx — v2 engine (2 Sep 2026): quality gates → rolling
     GEKS-Törnqvist per cell (product-churn-proof, drift-free) → BCWFI weights
-    (DGCA route share × booking-density). Same response shape as v1.
+    (configured route share × booking-density). Same response shape as v1.
     leadtime_code restricts the aggregate to a single booking window."""
     import pandas as pd
     import yaml
@@ -557,7 +561,7 @@ def get_fare_ladder(route_code: str = Query(description="e.g. DEL-BOM")) -> dict
 @app.get("/api/apix/getSourceHealth")
 @cached
 def get_source_health() -> dict:
-    """Trust-page feed: per source per collection day — quote count, route count,
+    """Source coverage feed: per source per collection day — quote count, route count,
     last collection timestamp."""
     conn = lake_connect()
     conn.row_factory = sqlite3.Row
@@ -654,7 +658,7 @@ def get_competition(days: int = Query(default=7, ge=1, le=30)) -> dict:
 
     Carrier shares use distinct flight numbers from the SerpAPI-covered panel
     over the last N collection days; HHI = Σ share² × 10000. This is neither
-    scheduled capacity nor DGCA seat share. Single-carrier routes are retained
+    scheduled capacity nor published seat share. Single-carrier routes are retained
     but explicitly identified as a source-coverage limitation.
     """
     conn = lake_connect()
@@ -714,10 +718,12 @@ def get_ledger_status() -> dict:
     return envelope([s], 1, 1, 1)
 
 
-@app.on_event("startup")
 def warm_cache() -> None:
     """Precompute every heavy payload in the background so the first dashboard
     load after a restart (or nightly data refresh) never waits on pandas."""
+    if os.environ.get("PRAMANA_WARM_LEGACY_CACHE", "0") != "1":
+        return
+
     import threading
 
     def go() -> None:
@@ -750,7 +756,8 @@ def favicon() -> Response:
     return Response(status_code=204)
 
 
-@app.api_route("/health", methods=["GET", "HEAD"])
+@app.head("/health", include_in_schema=False)
+@app.get("/health", operation_id="get_health")
 def health() -> dict:
     if read_only_enabled():
         from api.snapshot import validated_manifest

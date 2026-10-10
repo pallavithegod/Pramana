@@ -1,593 +1,171 @@
-<div align="center">
+# Pramāna
 
-# AIR-SANKHYIKI
+A local econometric agent and MIT-licensed Python SDK. SerpApi supplies live market observations; LangChain orchestrates a local Ollama model; the preserved Kalman primitive estimates comparable price baselines. The frontend is a developer Agent Workspace with streaming tool telemetry.
 
-### Real-Time Airfare Price Index (APIx) for India
+## Manual tasks you must perform
 
-**Automated airfare collection, statistical index computation, validation, and auditable price intelligence.**
-
-<br>
-
-**Smart India Hackathon 2026 · Problem Statement SIH26056 · MoSPI / DIID**
-
-<br>
-
-![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square\&logo=python\&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?style=flat-square\&logo=fastapi\&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-Dashboard-000000?style=flat-square\&logo=next.js\&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-Data%20Layer-003B57?style=flat-square\&logo=sqlite\&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-Collection-2EAD33?style=flat-square\&logo=playwright\&logoColor=white)
-
-</div>
-
----
-
-## ✈️ Overview
-
-**Air-Sankhyiki** is a production-oriented prototype for developing a **Real-Time Airfare Price Index (APIx) for India** through automated collection of airline and online travel aggregator (OTA) fares.
-
-The system collects airfare observations across a configured set of **DGCA-weighted city pairs and advance-booking windows**, processes them through cleaning and validation pipelines, and applies statistical methodologies to generate structured airfare price intelligence.
-
-The platform is designed to support **high-frequency airfare measurement** and provide analytical inputs relevant to the augmentation of India's Consumer Price Index (CPI).
-
-> **Project status:** Prototype / evaluation build
-> **Important:** This project is not an official MoSPI statistic or government publication.
-
----
-
-## Problem Statement
-
-### Smart India Hackathon 2026 — SIH26056
-
-**Development of a Real-time Airfare Price Index for India through Automated Web Scraping of Airline and Online Travel Aggregator Portals for Augmentation of the Consumer Price Index (CPI).**
-
-Airfare prices can change rapidly depending on route, airline, booking window, availability, demand, and market conditions.
-
-Air-Sankhyiki addresses this challenge by building an automated and auditable pipeline that transforms raw airfare observations into **cleaned, validated, traceable, and statistically processed price information**.
-
----
-
-## Solution
-
-The platform combines:
-
-* Automated airfare collection
-* Fare cleaning and normalization
-* DGCA-weighted route coverage
-* Multiple advance-booking windows
-* Statistical index computation
-* Availability-pressure analysis
-* Data-quality validation
-* Evidence preservation
-* Cryptographic integrity checks
-* Read-only API serving
-* Interactive analytical dashboards
-
----
-
-## System Architecture
-
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                        DATA SOURCES                         │
-│                                                             │
-│       Airline Sources     OTA Sources     DGCA References   │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    COLLECTION LAYER                         │
-│                                                             │
-│     Policy Checks → Collection → Validation → Raw Archive   │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  DATA & INDEXING LAYER                      │
-│                                                             │
-│  SQLite / Parquet → Matched Models → PRISM → BCWFI → GEKS  │
-│                                      │                      │
-│                                      ▼                      │
-│                                Kalman Nowcast               │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    TRUST & VERIFICATION                     │
-│                                                             │
-│   SHA-256 Hashing → Evidence Ledger → Quality Gates        │
-│                         → Verified Snapshot                  │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       SERVING LAYER                         │
-│                                                             │
-│                  FastAPI → Next.js Dashboard                 │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### End-to-End Pipeline
-
-```text
-COLLECT → ARCHIVE → VALIDATE → INDEX → VERIFY → SERVE
-```
-
----
-
-## Statistical Framework
-
-Air-Sankhyiki uses multiple statistical and analytical components.
-
-| Component          | Purpose                                                                            |
-| :----------------- | :--------------------------------------------------------------------------------- |
-| **PRISM**          | Separates base-fare repricing from availability pressure using observed fare rungs |
-| **BCWFI**          | Applies provisional weights based on route and advance-booking-window importance   |
-| **Rolling GEKS-T** | Provides a multilateral index framework designed to reduce chain drift             |
-| **Kalman Nowcast** | Produces a prototype estimate of the monthly APIx level from evolving observations |
-
-### Booking Windows
-
-The prototype works across multiple advance-booking windows:
-
-```text
-T+1 → T+7 → T+15 → T+30 → T+45
-```
-
-The current provisional BCWFI configuration assigns:
-
-```text
-T+1   : 35%
-T+7   : 25%
-T+15  : 18%
-T+30  : 13%
-T+45  :  9%
-```
-
-The two nearest windows therefore account for **60% of the provisional weight**.
-
----
-
-## Repository Structure
-
-```text
-air-sankhyiki/
-│
-├── apps/
-│   ├── api/
-│   │   ├── src/api/
-│   │   └── tests/
-│   │
-│   └── dashboard/
-│       ├── src/app/
-│       ├── src/components/
-│       └── src/lib/
-│
-├── packages/
-│   └── apix_index/
-│       ├── src/apix_index/
-│       └── tests/
-│
-├── services/
-│   ├── collectors/
-│   │   ├── src/collectors/
-│   │   └── tests/
-│   │
-│   └── pipeline/
-│
-├── data/
-│   ├── deploy/
-│   ├── logs/
-│   ├── scripts/
-│   ├── ledger.jsonl
-│   ├── route_basket.yaml
-│   └── route_weights.csv
-│
-├── scripts/
-├── .github/workflows/
-├── .env.example
-├── DEPLOY.md
-├── pyproject.toml
-└── render.yaml
-```
-
----
-
-## Components
-
-### `services/collectors/`
-
-Policy-gated collection layer supporting the current Akasa and SerpAPI workflows.
-
-Responsibilities include:
-
-* Fare collection
-* Source validation
-* Retry and quota handling
-* SQLite storage
-* Parquet storage
-* Raw-response archival
-* Evidence-ledger integration
-
-### `packages/apix_index/`
-
-Core statistical processing package.
-
-Includes:
-
-* Matched-model indexing
-* Rolling 14-day GEKS-T
-* BCWFI weighting
-* PRISM rung heuristic
-* Kalman prototype
-* Quality gates
-
-### `apps/api/`
-
-FastAPI serving layer using structured, MoSPI-style response envelopes for the prototype.
-
-### `apps/dashboard/`
-
-Next.js and Apache ECharts dashboard providing seven analytical views:
-
-1. Overview
-2. Routes
-3. PRISM
-4. Nowcast
-5. Competition
-6. Fair Fare
-7. Trust
-
-### `services/pipeline/`
-
-Pipeline boundary and operational notes. Current nightly orchestration is handled through **Windows Task Scheduler / PowerShell** rather than a dedicated application-level scheduler.
-
----
-
-## 📊 Audited Prototype Snapshot
-
-**Snapshot date: 13 September 2026**
-
-| Metric                                         |                        Value |
-| :--------------------------------------------- | ---------------------------: |
-| Deduplicated Fare Quotes                       |                   **27,980** |
-| Collection Dates                               |                       **14** |
-| Collection Period                              | **31 August – 13 September** |
-| Configured DGCA City Pairs                     |                       **20** |
-| Observed Carriers                              |                        **7** |
-| Akasa Observations with RBD + Native Base Fare |                    **7,594** |
-| Latest Collection                              |             **2,851 quotes** |
-| SerpAPI Quotes in Latest Collection            |                    **1,995** |
-| Akasa Quotes in Latest Collection              |                      **856** |
-| Sealed Raw Captures                            |            **2,643 / 2,643** |
-| Latest Prototype APIx                          |                    **85.95** |
-| API Cells                                      |                       **71** |
-| Matched Products                               |                    **1,122** |
-
-> These values are derived from read-only SQLite queries and local API responses. They represent a dated prototype snapshot and **must not be interpreted as official statistics**.
-
----
-
-## 🔐 Trust & Data Integrity
-
-Air-Sankhyiki treats evidence preservation and historical integrity as first-class requirements.
-
-### Trust Rules
-
-1. Historical observations and evidence are append-only.
-2. Active collectors must pass the policy engine.
-3. Raw responses are archived before parsing.
-4. Archived evidence is sealed into the evidence ledger.
-5. Data passes validation and quality gates before indexing.
-6. Verified snapshots are used for read-only serving.
-
-### Collection Policy
-
-The prototype does **not** rely on:
-
-* Fingerprint evasion
-* CAPTCHA bypass
-* Unauthorized source access
-* Disallowed access-control circumvention
-
-The goal is to maintain an ethics-first and auditable collection workflow.
-
----
-
-## Method Boundaries
-
-The current prototype has explicit methodological limitations.
-
-### BCWFI
-
-BCWFI currently uses provisional booking-window weights:
-
-```text
-T+1   35%
-T+7   25%
-T+15  18%
-T+30  13%
-T+45   9%
-```
-
-### Akasa Availability
-
-Akasa `availableCount` represents source-reported RBD-level availability.
-
-PRISM uses changes in returned fare rungs as an **availability-pressure heuristic**. It is not a measurement of physical cabin utilization.
-
-### Fare Components
-
-SerpAPI provides offered total fares rather than a native fare-component split.
-
-Akasa statutory and airport components are preserved. Material component movements are flagged so that airport-fee changes are not silently described as airline repricing or availability pressure.
-
-### Competition HHI
-
-The Competition HHI view is a **seven-day SerpAPI distinct-flight-number frequency proxy**.
-
-It is not:
-
-* Scheduled capacity
-* DGCA seat share
-* A causal measure of competition
-
-### Kalman Nowcast
-
-The Kalman component estimates the prototype's monthly APIx level.
-
-It is not yet calibrated to or validated against an official CPI airfare publication.
-
----
-
-## Local Setup
-
-### Prerequisites
-
-* Python **3.12+**
-* `uv`
-* Node.js and npm
-
-### Clone
+1. Install Ollama for Windows from https://ollama.com/download/windows. It is absent from this machine's PATH. Open a new PowerShell terminal after installation.
+2. Download a tool-capable local model: `ollama pull qwen2.5:7b`. Run `ollama serve` only if the desktop service is not already running. Choose a smaller tool-capable model if your hardware cannot run 7B and change `OLLAMA_MODEL` accordingly.
+3. In this repository, copy `.env.pramana.example` to `.env.pramana` and privately set `SERPAPI_KEY` to your own authorized SerpApi key. No hosted LLM key is needed. Model inference is local; SerpApi consumes search credits. Check your account's balance.
+4. After a live run, review changes and perform Git version control yourself. No commits, pushes, uploads, or submissions are automated here. Suggested commands, run from this repo after reviewing `git diff`:
 
 ```powershell
-git clone <private-repository-url>
-cd air-sankhyiki
+git status --short
+git diff --check
+git add .gitignore .env.pramana.example README.md pyproject.toml uv.lock apps/api apps/dashboard packages/pramana_sdk
+git diff --cached --stat
+git commit -m "Pivot to Pramana agent workspace and SerpApi SDK"
+git push
 ```
 
-### Install Python dependencies
+5. Record the functioning local workflow, publish a publicly accessible video under three minutes, and submit the repository/video yourself. Disclose AI-assisted development. Official submission rules: https://serpapi.github.io/serpapi-india-hackathon-2026/rules.html . The published deadline is October 10, 2026, 23:59 IST.
+
+## Run locally
+
+PowerShell, starting in the outer workspace:
 
 ```powershell
-uv sync
+Set-Location 'D:\Engineering Resources\SERPAPI\air-sankhyiki'
+Copy-Item -LiteralPath .env.pramana.example -Destination .env.pramana
+# Edit .env.pramana privately before starting the API.
+uv sync --all-packages
+uv run --package api uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
 
-### Environment Configuration
-
-Create the local environment file from the provided template:
+In a second terminal:
 
 ```powershell
-Copy-Item .env.example .env
-```
-
-Add the required local credentials and configuration.
-
-> Never commit the real `.env` file or source credentials.
-
----
-
-## Run the API
-
-From the repository root:
-
-```powershell
-uv run --project apps/api uvicorn api.main:app --host 127.0.0.1 --port 8001
-```
-
-The API will run at:
-
-```text
-http://127.0.0.1:8001
-```
-
----
-
-## Run the Dashboard
-
-Open a second terminal:
-
-```powershell
-Set-Location apps\dashboard
-npm install
+Set-Location 'D:\Engineering Resources\SERPAPI\air-sankhyiki\apps\dashboard'
+npm ci
 npm run dev
 ```
 
-Then open:
+Open http://localhost:3000 and http://127.0.0.1:8000/docs . The API loads only `.env.pramana`, without overriding existing shell environment variables. Next proxies `/api/chat/*` to `127.0.0.1:8000`; configure `PRAMANA_BASE_URL` in the frontend server environment for another port. This loopback application has no authentication and is intended for local use. Public deployment requires authentication, per-user quotas and separate stores.
+
+## Exact pivot directory structure
+
+The historical enclosing folder name is retained so excluded scripts and research references continue to resolve. These are the authored pivot files; generated caches and untouched legacy files are omitted.
 
 ```text
-http://127.0.0.1:3000/
+SERPAPI/
+|-- Documentation/                         # existing Mintlify repo; untouched
+|-- analysis/                              # previous audit; untouched
+|-- prompt.md / project.md                 # workspace inputs; untouched
+|-- air-sankhyiki/                          # main monorepo
+    |-- README.md
+    |-- .env.pramana.example
+    |-- .gitignore
+    |-- pyproject.toml / uv.lock
+    |-- packages/
+    |   |-- apix_index/                    # original mathematical core, unchanged
+    |   |-- pramana_sdk/
+    |       |-- LICENSE / pyproject.toml
+    |       |-- src/pramana/
+    |       |   |-- __init__.py / config.py / errors.py
+    |       |   |-- providers.py / normalize.py / client.py
+    |       |   |-- store.py / filter.py / tools.py
+    |       |   |-- workflow.py / agent.py
+    |       |-- tests/test_agent_sdk.py
+    |-- apps/
+    |   |-- api/
+    |   |   |-- pyproject.toml
+    |   |   |-- src/api/__init__.py / main.py / chat.py
+    |   |   |-- tests/test_chat.py           # existing regression tests also retained
+    |   |-- dashboard/
+    |       |-- package.json / package-lock.json / next.config.ts
+    |       |-- src/
+    |           |-- app/layout.tsx / page.tsx / globals.css / icon.svg
+    |           |-- lib/chat.ts
+    |           |-- components/agent/
+    |               |-- AgentWorkspace.tsx
+    |               |-- ChatPanel.tsx
+    |               |-- TelemetryConsole.tsx
+    |               |-- SignalResults.tsx
+    |-- services/collectors/               # existing collectors, unchanged
+    |-- data/
+        |-- deploy/                       # immutable analytical snapshot, unchanged
+        |-- runtime/pramana.sqlite         # generated mutable observations/reports
 ```
 
-The dashboard communicates with the local FastAPI serving layer.
+No authored `CONTRIBUTING.md` existed in either repository, so there was no such file to delete. PPT, scripts, research and Mintlify content remain untouched. The legacy dashboard pages, shell, branding icon and unused frontend components were removed. Historical backend analytical endpoints remain compatible.
 
-The API origin can be configured using:
+## Modular Python implementation
+
+`providers.py` wraps the official `serpapi.Client`, bounds per-run searches and redacts transport errors. `normalize.py` handles Google Flights, Hotels, Shopping, Amazon India, Jobs and News. `client.py` validates query specifications and returns normalized JSON with capture timestamps, stable product identities, source metadata, raw payload fingerprints, pagination and coverage warnings. `store.py` persists mutable comparable histories outside the immutable snapshot.
+
+`tools.py` creates six actual LangChain `@tool` functions: `get_flight_fares`, `get_hotel_rates`, `get_retail_prices`, `get_labor_salaries`, `get_market_context`, `run_prism_filter`. Tools share a run-local registry and emit started/completed telemetry. Shopping plus Amazon costs two searches. Failed dispatches count toward the search budget. There is no hidden paid model fallback.
+
+`filter.py` calls the original `apix_index.nowcast.local_level_filter` unchanged. It requires at least three distinct, timezone-aware comparable observations per product, validates positive finite single-currency prices, exposes q/r, posterior variance, conditional bands, trajectory and normalized innovations. It estimates a latent baseline; it does not establish a true price or a national CPI. Search result rankings are not time series. Repeated searches seconds apart are not meaningful economic history; collect matching specifications over an appropriate interval. Room/seller/pack changes require further comparability checks before published indexing. Q and R use the primitive's empirical variance convention; the conditional bands are not independently calibrated, and anomaly scores are descriptive rather than validated causal detectors.
+
+The agent-facing filter requires `{"result_id":"result_..."}` from a prior price tool so the model cannot supply fabricated observations. The public SDK filter accepts the full normalized JSON for standalone use.
+
+`agent.py` uses native LangChain `create_agent` and `ChatOllama`, including the exact requested system prompt. `workflow.py` fills missing Filter and News dependencies when the model tries to finish after a price search. Dispatch remains bounded by tool/search limits; errors, missing history and budget exhaustion are surfaced. News provides candidate explanations, not established causal attribution. Tool-output grounding is an instruction and data-access constraint, not a guarantee that an LLM can never misstate a result.
+
+Standalone SDK example (no backend required):
+
+```python
+import asyncio
+from pathlib import Path
+from pramana import PramanaClient, run_prism_filter
+from pramana.providers import SerpApiGateway
+from pramana.store import SignalStore
+import os
+
+async def main():
+    client = PramanaClient(SerpApiGateway(os.environ["SERPAPI_KEY"]),
+                           SignalStore(Path("data/runtime/sdk.sqlite")))
+    raw = await client.get_retail_prices("Samsung 990 PRO 1TB SSD", "both")
+    print(run_prism_filter(raw))
+    print(await client.get_market_context("Samsung SSD prices India"))
+
+asyncio.run(main())
+```
+
+## Chat contract and component layout
+
+- `GET /api/chat/status`: local Ollama/model and key readiness; no credentials returned.
+- `POST /api/chat`: JSON report after execution.
+- `POST /api/chat/stream`: POST-based SSE; actual run/tool started/completed events, heartbeats, final report or sanitized failure. Request: `{"message":"...","history":[{"role":"user","content":"..."}]}`. History permits only user/assistant roles, at most 12 entries. Message maximum 8,000 characters.
+- `GET /api/chat/reports/{run_id}`: persisted report or 404.
+- Busy requests return 429; unconfigured Ollama/key returns 503; synchronous timeout returns 504. Disconnects cancel orchestration and release streaming capacity. A provider request already dispatched in a worker thread can finish after cancellation; its search credit cannot be recalled.
 
 ```text
-NEXT_PUBLIC_APIX_BASE
+RootLayout
+|-- AgentWorkspace (request lifecycle, readiness, cancellation, history)
+    |-- Header (local model status)
+    |-- ChatPanel (examples, dialogue, prompt composer)
+    |   |-- SignalResults (measured coverage, baselines, source URLs)
+    |-- TelemetryConsole (live actual tool events, latency, result/search counts)
 ```
 
----
+Report text is rendered as plain text and source links accept only HTTP(S). Keys stay on the API server. The two-column layout collapses into chat plus console on mobile. There are no government, compliance or trust badges. SSE streams tool telemetry and the completed answer; it does not currently stream individual model tokens.
 
-## Testing
+## Verification and packaging
 
-### API
-
-```powershell
-uv run --project apps/api pytest apps/api/tests -q
-```
-
-### Index Engine
+Execution verification: 74 Python tests passed; Ruff, TypeScript and the Next.js production build passed; both wheels built. Chromium checks exercised prompt examples, POST SSE, report rendering, tool telemetry and mobile overflow using explicit provider fixtures, with no browser page errors. The workspace preview PNGs are UI fixtures, not evidence of live SerpApi/Ollama execution.
 
 ```powershell
-uv run --project packages/apix_index pytest packages/apix_index/tests -q
-```
-
-### Collectors
-
-```powershell
-uv run --project services/collectors pytest services/collectors/tests -q
-```
-
-### Dashboard Type Check
-
-```powershell
-Set-Location apps\dashboard
-npm exec -- tsc --noEmit --incremental false
-```
-
-### Production Build
-
-```powershell
+uv run pytest -q
+uv run ruff check packages/pramana_sdk apps/api/src/api apps/api/tests/test_chat.py
+Set-Location apps/dashboard
+npm run typecheck
 npm run build
 ```
 
+Tests cover the real LangChain tool-call graph using an injected model/provider, automatic completion when a model finishes early, all six engine parsers, insufficient history, mixed-currency rejection, original Kalman equivalence, partial provider results, budget exhaustion, redacted errors, report persistence, SSE, input validation, positive quote limits and unique health operation IDs.
 
----
+`getQuotes?limit=0` now returns 422 before reading the database. GET `/health` has explicit unique operation ID `get_health`; HEAD remains available and is omitted from OpenAPI. Startup uses FastAPI lifespan rather than deprecated startup decorators.
 
-## Technology Stack
+Build distributable packages with `uv build --package apix-index` and `uv build --package pramana-sdk`. The SDK depends on the mathematical package: distribute/install both local wheels, rather than claiming `pip install pramana-sdk` works from PyPI before publication. SDK code has its own MIT license; existing mathematical code retains its existing ownership and licensing. No package publication was performed.
 
-### Backend & Data
+Live Ollama inference and paid/credited SerpApi calls have not been exercised in this execution: the local model is absent and no new key was supplied. Offline regression success does not establish live provider compatibility or demo latency. Run the example prompt after setup and verify actual sources, tool ordering and hardware responsiveness before recording.
 
-* Python 3.12+
-* FastAPI
-* Uvicorn
-* Pandas
-* NumPy
-* Pydantic
-* SQLite
-* Apache Parquet
-* PyArrow
+## Judge strategy
 
-### Collection
+Choose **AI Agents** for this implementation. That is a fit assessment, not a prediction of competitor strength or first place. A tested multi-engine economic investigation with visible tool sequencing exploits the existing math and workspace. Open-Source Integrations would be stronger with a reusable upstream provider/connector, a real upstream contribution or adoption, complete standalone installation and contract examples; wrapping existing tools in a new SDK alone is weak differentiation. The published rules require selecting one track and weigh idea strength, originality, complexity, usefulness and meaningful SerpApi usage without fixed percentage weights.
 
-* Playwright
-* HTTPX
-* Python-dotenv
-* Source-specific adapters
+Demonstrate one complete investigation: exact-spec live observations -> comparable-history coverage -> PRISM posterior -> dated news -> a bounded, cited report. Show an empty salary, an exhausted budget or insufficient history gracefully. Public setup instructions, tests and an accessible sub-three-minute demo are essential submission evidence. Do not claim causality or an official CPI from search samples.
 
-### Frontend
+The concrete cross-engine use case is a **worker relocation purchasing-power comparison**: Google Jobs supplies role/pay opportunities; Google Flights supplies one-time relocation travel cost; Shopping supplies a fixed essential-goods basket; Hotels adds explicitly temporary accommodation. Compare first-month cash requirements across Bengaluru/Pune/Hyderabad, keeping advertised salary periods, one-time expenses and recurring expenses separate. Exclude missing pay instead of inventing it; rent, tax and recurring city costs require additional evidence before claiming full real-income comparisons. This is a scenario, not an implemented affordability calculator.
 
-* Next.js 15
-* React 19
-* TypeScript
-* Tailwind CSS
-* Apache ECharts
-
-### Testing & Tooling
-
-* uv
-* pytest
-* Ruff
-* GitHub Actions
-
----
-
-## Research & References
-
-The methodology and design of AIR-SANKHYIKI are informed by established
-research and official statistical guidance related to consumer price
-measurement, dynamic pricing and multilateral index methods.
-
-### Official Statistical Methodology
-
-- **IMF / ILO — Consumer Price Index Manual (2020)**  
-  Chapter 10: Multilateral methods and price-index construction.
-
-- **UK Office for National Statistics (ONS)**  
-  Methodological work on GEKS-Törnqvist approaches for dynamic pricing data.
-
-- **Eurostat**  
-  Guidance on multilateral methods used in price-index construction.
-
-### Airfare Pricing & Availability Research
-
-- **Williams — Dynamic Airfare Pricing and Seat Availability**  
-  Research on the relationship between airfare prices and seat availability.
-
-- **Alderighi et al. — Hidden Prices with Fixed Inventory**  
-  Research on airline pricing and inventory effects.
-
-- **Statistics Canada — Airfare Methodology**  
-  Reference material on airfare measurement and decomposition.
-
-- **MIT Billion Prices Project — Cavallo & Rigobon**  
-  Research related to online price collection and high-frequency price measurement.
-
-### Indian Data & Domain Sources
-
-- **Ministry of Statistics and Programme Implementation (MoSPI)**  
-  eSankhyiki and CPI-related statistical resources.
-
-- **Directorate General of Civil Aviation (DGCA)**  
-  Passenger traffic statistics, route information and aviation-sector references.
-
-- **Air Transport Circular 02/2024**  
-  Tariff-sheet and fare-related regulatory reference material.
-
-### Methodological Context
-
-These sources inform the project's approach to:
-
-- CPI airfare measurement
-- Multilateral price indices
-- GEKS-Törnqvist methodology
-- Dynamic airfare pricing
-- Fare and availability dynamics
-- High-frequency online price collection
-- Statistical nowcasting
----
-
-## Related Repositories
-
-| Repository                                                        | Purpose                                                     |
-| :---------------------------------------------------------------- | :---------------------------------------------------------- |
-| **[landing-page](https://github.com/Air-Sankhyiki/landing-page)** | Air-Sankhyiki project landing page                          |
-| **[resources](https://github.com/Air-Sankhyiki/resources)**       | Documentation, methodology and supporting project resources |
-
----
-
-## Project Status
-
-**Prototype / Development Evaluation Build**
-
-The current implementation demonstrates an end-to-end prototype for
-airfare collection, validation, statistical index computation,
-verification, API serving and dashboard-based analysis.
-
-Production government integration would require appropriate review of:
-
-- Methodology
-- Security
-- Data agreements
-- Source permissions
-- Deployment controls
-- Government integration requirements
-
-## Team
-
-### Tech Divaas
-
-**Smart India Hackathon 2026**
-
-**Problem Statement:** SIH26056
-**Domain:** Smart Automation
-**Category:** Software
-
----
-
-<div align="center">
-
-**AIR-SANKHYIKI**
-
-*Data-driven airfare intelligence for India.*
-
-</div>
+The proposed wow feature is **uncertainty-driven active investigation**: use Kalman innovations and posterior variance to distinguish a transient quote from persistent movement, allocate the next bounded SerpApi query to the most uncertain comparable series, then test competing explanations against dated News and Jobs signals. Demonstrate a controlled injected transient versus persistent shock, show which query was chosen and how uncertainty changed, and provide a deterministic replay. Current code exposes innovations/variance and tool provenance; adaptive search allocation, replay execution and competing-hypothesis testing remain follow-on work and must not be presented as already implemented. A timeline association alone does not prove causality.
