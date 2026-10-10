@@ -11,6 +11,7 @@ from fastapi.responses import StreamingResponse
 from pramana.agent import AgentRuntime, readiness
 from pramana.config import Settings
 from pramana.errors import PramanaError
+from pramana.replay import replay_evidence
 from pramana.store import SignalStore
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -123,3 +124,18 @@ def report(run_id: str) -> dict:
     if data is None:
         raise HTTPException(404, detail={"code": "REPORT_NOT_FOUND"})
     return data
+
+
+@router.get("/reports/{run_id}/replay")
+def replay(run_id: str) -> dict:
+    """Recompute saved filter/decision evidence without Ollama or SerpApi calls."""
+    data = report(run_id)
+    if "evidence" not in data:
+        raise HTTPException(
+            409,
+            detail={"code": "REPLAY_UNAVAILABLE", "message": "This report predates replay capture"},
+        )
+    try:
+        return {"run_id": run_id, **replay_evidence(data["evidence"])}
+    except (ValueError, TypeError, KeyError):
+        raise HTTPException(409, detail={"code": "INVALID_REPLAY_EVIDENCE"}) from None

@@ -390,3 +390,22 @@ summary {
 }
 
 }
+
+.signal-chart { margin: 16px 0 4px; }
+.signal-chart svg { width: 100%; height: auto; display: block; }
+.chart-legend { display: flex; gap: 15px; flex-wrap: wrap; font: 10px monospace; color: #8c9daa; }
+.chart-legend span:nth-child(2), .chart-legend span:nth-child(3) { color: var(--accent); }
+.signal-chart figcaption { color: var(--muted); font: 9px monospace; line-height: 1.7; }
+.investigation { border: 1px solid #bad8cf; border-radius: 9px; padding: 5px 16px 14px; margin-top: 18px; background: #f3f9f7; }
+.investigation p { font-size: 12px; line-height: 1.7; color: #567069; margin: 8px 0; }
+.investigation .decision-title { color: var(--ink); font-weight: 600; }
+.decision-metrics { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 10px monospace; color: var(--accent); }
+.investigation .decision-query { font: 10px monospace; overflow-wrap: anywhere; }
+.investigation small { font-size: 10px; color: var(--muted); line-height: 1.6; display: block; }
+.candidate-scroll { overflow-x: auto; }
+.candidate-scroll table { width: 100%; border-collapse: collapse; font-size: 10px; text-align: left; }
+.candidate-scroll th, .candidate-scroll td { padding: 9px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.candidate-scroll th { font-weight: 500; color: var(--muted); white-space: nowrap; }
+.evidence-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.evidence-actions button { background: white; border: 1px solid #ccd8dd; padding: 9px 13px; border-radius: 7px; color: var(--accent); font-size: 11px; }
+.replay-result { font: 11px monospace; color: var(--muted); padding: 12px; background: #edf3f1; border-radius: 7px; line-height: 1.7; }

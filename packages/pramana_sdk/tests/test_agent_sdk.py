@@ -201,11 +201,12 @@ def test_actual_langchain_fetch_filter_news_loop_and_report_storage(tmp_path):
         assert [e["tool"] for e in events if e["type"] == "tool.started"] == [
             "get_retail_prices",
             "run_prism_filter",
+            "plan_investigation",
             "get_market_context",
         ]
         report = events[-1]["report"]
         assert report["status"] == "partial" and report["searches_used"] == 2
-        assert report["tool_calls"] == 3
+        assert report["tool_calls"] == 4
         assert store.report(report["run_id"]) == report
         assert "https://example.com/news" in report["citations"]
 
@@ -238,6 +239,7 @@ def test_workflow_completes_dependencies_when_model_finishes_early(tmp_path):
         assert [e["tool"] for e in events if e["type"] == "tool.started"] == [
             "get_retail_prices",
             "run_prism_filter",
+            "plan_investigation",
             "get_market_context",
         ]
         assert events[-1]["type"] == "run.completed"

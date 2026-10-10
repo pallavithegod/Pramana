@@ -19,6 +19,7 @@ class PramanaClient:
         self.gateway = gateway
         self.store = store
         self.results: dict[str, dict] = {}
+        self.decisions: list[dict] = []
 
     async def _query(self, params: dict, parser, domain: str) -> dict:
         data = await self.gateway.search(params)

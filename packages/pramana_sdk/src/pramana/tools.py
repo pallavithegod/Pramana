@@ -10,8 +10,33 @@ from langchain.tools import tool
 from .client import PramanaClient
 from .errors import PramanaError
 from .filter import run_prism_filter as filter_signal
+from .investigation import fingerprint
+from .investigation import plan_investigation as plan_signal
 
 EventSink = Callable[[dict], Awaitable[None]]
+
+
+def compact_tool_result(result: dict) -> dict:
+    """Keep full evidence server-side and bounded summaries in the model's context."""
+    view = {k: v for k, v in result.items() if k not in {"engines", "series", "items"}}
+    if "items" in result:
+        view["items"] = result["items"][:8]
+        view["total_items"] = len(result["items"])
+    if "series" in result:
+        view["series"] = [
+            {
+                **{k: v for k, v in item.items() if k not in {"points", "trajectory"}},
+                **({"n_observations": len(item["points"])} if "points" in item else {}),
+            }
+            for item in result["series"][:8]
+        ]
+        view["total_series"] = len(result["series"])
+    if "ranked_candidates" in view:
+        view["ranked_candidates"] = view["ranked_candidates"][:8]
+        view["total_candidates"] = len(result["ranked_candidates"])
+    if any(len(result.get(key, [])) > 8 for key in ["items", "series", "ranked_candidates"]):
+        view["context_note"] = "First 8 shown; full evidence is retained in the saved report."
+    return view
 
 
 def create_tools(
@@ -43,11 +68,16 @@ def create_tools(
                     "status": result["status"],
                     "duration_ms": round((monotonic() - started) * 1000),
                     "result_id": result.get("result_id"),
-                    "count": len(result.get("items", result.get("series", []))),
+                    "count": len(
+                        result.get(
+                            "items", result.get("series", result.get("ranked_candidates", []))
+                        )
+                    ),
                     "searches_used": client.gateway.searches_used,
+                    "error": result.get("error"),
                 }
             )
-        return result
+        return compact_tool_result(result)
 
     @tool
     async def get_flight_fares(origin: str, destination: str, departure_date: str) -> dict:
@@ -88,6 +118,45 @@ def create_tools(
         return await invoke("get_market_context", lambda: client.get_market_context(query))
 
     @tool
+    async def plan_investigation() -> dict:
+        """Choose one bounded follow-up news search using trusted PRISM outputs.
+
+        Call after run_prism_filter. Returns ranked uncertainty/innovation scores,
+        the selected signal and a next_search query, or an explicit coverage gap.
+        It consumes no search credits. News cannot reduce the price posterior variance.
+        """
+
+        async def action() -> dict:
+            inputs = [
+                r
+                for r in client.results.values()
+                if r.get("method") == "pramana-kalman-local-level-v1"
+            ]
+            if not inputs:
+                raise PramanaError("FILTER_REQUIRED", "Run PRISM on a fetched price result first")
+            remaining = max(0, client.gateway.max_searches - client.gateway.searches_used)
+            result = plan_signal(inputs, remaining)
+            client.decisions.append(
+                {
+                    "inputs": inputs,
+                    "searches_remaining": remaining,
+                    "expected_sha256": fingerprint(result),
+                    "policy": result["policy"],
+                }
+            )
+            result = {
+                **result,
+                "result_id": "plan_" + result["decision_id"],
+                "kind": "investigation",
+            }
+            client.results[result["result_id"]] = result
+            if emit:
+                await emit({"type": "investigation.planned", "decision": result})
+            return result
+
+        return await invoke("plan_investigation", action)
+
+    @tool
     async def run_prism_filter(raw_price_data: dict) -> dict:
         """Filter a prior price tool's JSON. Pass {"result_id":"result_..."} from that output.
 
@@ -115,4 +184,5 @@ def create_tools(
         get_labor_salaries,
         get_market_context,
         run_prism_filter,
+        plan_investigation,
     ]

@@ -58,3 +58,26 @@ def test_chat_stream_contract_and_semaphore_release(monkeypatch):
         ).status_code
         == 422
     )
+
+
+def test_offline_replay_endpoint_needs_no_model_or_provider(monkeypatch, tmp_path):
+    from pramana.replay import build_evidence
+    from pramana.store import SignalStore
+
+    store = SignalStore(tmp_path / "reports.sqlite")
+    store.save_report("run_new", "2026-10-10", {"evidence": build_evidence({}, [])})
+    store.save_report("run_old", "2026-10-10", {"answer": "Older format"})
+
+    class SavedRuntime:
+        pass
+
+    agent = SavedRuntime()
+    agent.store = store
+    monkeypatch.setattr(routes, "runtime", lambda: agent)
+    client = TestClient(app)
+    response = client.get("/api/chat/reports/run_new/replay")
+    assert response.status_code == 200
+    assert response.json()["status"] == "verified"
+    assert response.json()["network_calls"] == 0
+    assert client.get("/api/chat/reports/run_old/replay").status_code == 409
+    assert client.get("/api/chat/reports/missing/replay").status_code == 404

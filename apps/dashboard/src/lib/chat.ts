@@ -10,6 +10,37 @@ export type Signal = {
     n_observations: number;
     smoothed_baseline?: number;
     innovation_z?: number;
+    band_low?: number;
+    band_high?: number;
+    trajectory?: {
+        observed_at: string;
+        raw: number;
+        baseline: number;
+        variance: number;
+    }[];
+};
+export type Candidate = {
+    product_id: string;
+    title: string;
+    currency: string;
+    coverage: string;
+    n_observations: number;
+    relative_uncertainty: number | null;
+    innovation_z: number | null;
+    priority_score: number | null;
+};
+export type Investigation = {
+    decision_id: string;
+    policy: string;
+    status: string;
+    reason: string;
+    selected: Candidate | null;
+    ranked_candidates: Candidate[];
+    next_search: {
+        query: string;
+    } | null;
+    searches_remaining: number;
+    limitations: string[];
 };
 export type Report = {
     run_id: string;
@@ -18,6 +49,8 @@ export type Report = {
     searches_used: number;
     tool_calls: number;
     citations: string[];
+    investigations?: Investigation[];
+    evidence?: unknown;
     measurements: {
         series?: Signal[];
     }[];
@@ -35,6 +68,7 @@ export type AgentEvent = {
         message: string;
     };
     report?: Report;
+    decision?: Investigation;
 };
 export async function streamChat(message: string, history: Dialogue[], signal: AbortSignal, onEvent: (event: AgentEvent) => void) {
     const response = await fetch("/api/chat/stream", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message, history: history.slice(-12) }), signal });

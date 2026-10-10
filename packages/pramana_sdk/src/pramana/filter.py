@@ -47,6 +47,7 @@ def run_prism_filter(raw_price_data: dict | str) -> dict:
             out.append(
                 {
                     "product_id": pid,
+                    "title": sample.get("title"),
                     "status": "insufficient_history",
                     "n_observations": len(points),
                     "minimum_required": 3,

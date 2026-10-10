@@ -14,6 +14,7 @@ from .client import PramanaClient
 from .config import Settings
 from .errors import PramanaError
 from .providers import SerpApiGateway
+from .replay import build_evidence
 from .store import SignalStore
 from .tools import create_tools
 from .workflow import evidence_workflow
@@ -27,7 +28,9 @@ SYSTEM_PROMPT = (
 EXECUTION_RULES = """
 Use tools to answer empirical questions. After fetching a price result, call run_prism_filter
 with {"result_id": that result's result_id}; after filtering, investigate relevant possible
-drivers with get_market_context when explanations/anomalies are requested. If a tool says
+drivers with plan_investigation, then get_market_context using its next_search query.
+Explain why that signal was selected. Conditional price uncertainty is not reduced by News.
+Cold-start histories need later captures, not repeated searches in the same run. If a tool says
 insufficient_history, say so; never manufacture a time series or a price. Filter estimates
 are not proven true prices. Do not pool different products/currencies. Jobs salaries are
 optional advertised pay, not a CPI component. News associations are hypotheses, not proof.
@@ -100,7 +103,7 @@ class AgentRuntime:
                     model=model,
                     tools=create_tools(client, emit, self.settings.max_tool_calls),
                     system_prompt=SYSTEM_PROMPT + "\n" + EXECUTION_RULES,
-                    middleware=[evidence_workflow(client, trace, self.settings.max_tool_calls)],
+                    middleware=evidence_workflow(client, trace, self.settings.max_tool_calls),
                 )
                 messages = [
                     HumanMessage(
@@ -153,7 +156,10 @@ class AgentRuntime:
                     "tool_calls": sum(e["type"] == "tool.started" for e in trace),
                     "measurements": outputs,
                     "warnings": warnings,
-                    "citations": list(
+                    "investigations": [r for r in outputs if r.get("kind") == "investigation"],
+                    "evidence": build_evidence(client.results, client.decisions),
+                    "trace": list(trace),
+                    "citations": sorted(
                         {i["url"] for r in outputs for i in r.get("items", []) if i.get("url")}
                     ),
                     "status": "partial"
