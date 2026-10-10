@@ -1,6 +1,7 @@
 import asyncio
 import json
 
+import httpx
 import pytest
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import AIMessage, ToolMessage
@@ -243,5 +244,46 @@ def test_workflow_completes_dependencies_when_model_finishes_early(tmp_path):
             "get_market_context",
         ]
         assert events[-1]["type"] == "run.completed"
+
+    asyncio.run(check())
+
+
+@pytest.mark.parametrize("capture", [False, True])
+@pytest.mark.parametrize("timeout_type", [TimeoutError, httpx.ReadTimeout])
+def test_timeout_retains_completed_evidence_or_reports_no_measurements(
+    tmp_path, monkeypatch, capture, timeout_type
+):
+    def create_timing_out_agent(*, tools, **kwargs):
+        class TimingOutAgent:
+            async def ainvoke(self, *args):
+                if capture:
+                    retail = next(tool for tool in tools if tool.name == "get_retail_prices")
+                    await retail.ainvoke({"query": "SSD", "source": "shopping"})
+                raise timeout_type("Local inference timed out")
+
+        return TimingOutAgent()
+
+    monkeypatch.setattr("pramana.agent.create_agent", create_timing_out_agent)
+
+    async def check():
+        store = SignalStore(tmp_path / "runtime.sqlite")
+        runtime = AgentRuntime(
+            Settings(), store, model=ScriptedToolModel(),
+            gateway_factory=lambda: SerpApiGateway("", search=lambda _: shopping_payload()),
+        )
+        events = [event async for event in runtime.events("Analyze SSD")]
+        terminal = events[-1]
+        if capture:
+            assert terminal["type"] == "run.completed"
+            report = terminal["report"]
+            assert report["status"] == "partial"
+            assert report["measurements"] and report["evidence"]
+            assert "https://example.com/product" in report["citations"]
+            assert any("budget" in warning for warning in report["warnings"])
+            assert store.report(report["run_id"]) == report
+        else:
+            assert terminal["type"] == "run.failed"
+            assert terminal["error"]["code"] == "RUN_TIMEOUT"
+            assert "did not return any measurements" in terminal["error"]["message"]
 
     asyncio.run(check())

@@ -1,6 +1,7 @@
 """LangChain @tool bindings with per-run budgets, provenance and telemetry."""
 
 import json
+import re
 from collections.abc import Awaitable, Callable
 from time import monotonic
 from typing import Literal
@@ -14,6 +15,25 @@ from .investigation import fingerprint
 from .investigation import plan_investigation as plan_signal
 
 EventSink = Callable[[dict], Awaitable[None]]
+
+_QUERY_FILLER = {
+    "a", "an", "and", "analyze", "analysis", "compare", "current", "driver",
+    "drivers", "find", "for", "from", "in", "investigate", "market", "of",
+    "price", "prices", "pricing", "recent", "supply", "the", "track", "trend",
+    "volatility", "with",
+}
+
+
+def _matches_retail_target(query: str, title: str) -> bool:
+    """Reject adjacent catalog products when PRISM plans follow-up research.
+
+    Search engines commonly mix near-neighbor SKUs (for example Samsung 9100
+    PRO and 990 PRO). Keep the user's brand/model/capacity tokens as hard
+    constraints; broad research terms such as "price volatility" are ignored.
+    """
+    target = set(re.findall(r"[a-z0-9]+", query.lower())) - _QUERY_FILLER
+    candidate = set(re.findall(r"[a-z0-9]+", title.lower()))
+    return bool(target) and target.issubset(candidate)
 
 
 def compact_tool_result(result: dict) -> dict:
@@ -134,11 +154,25 @@ def create_tools(
             ]
             if not inputs:
                 raise PramanaError("FILTER_REQUIRED", "Run PRISM on a fetched price result first")
+            scoped_inputs = []
+            for result in inputs:
+                raw = client.results.get(result.get("input_result_id"), {})
+                query = raw.get("query")
+                if query and raw.get("domain") == "retail":
+                    result = {
+                        **result,
+                        "series": [
+                            series
+                            for series in result.get("series", [])
+                            if _matches_retail_target(query, series.get("title") or "")
+                        ],
+                    }
+                scoped_inputs.append(result)
             remaining = max(0, client.gateway.max_searches - client.gateway.searches_used)
-            result = plan_signal(inputs, remaining)
+            result = plan_signal(scoped_inputs, remaining)
             client.decisions.append(
                 {
-                    "inputs": inputs,
+                    "inputs": scoped_inputs,
                     "searches_remaining": remaining,
                     "expected_sha256": fingerprint(result),
                     "policy": result["policy"],

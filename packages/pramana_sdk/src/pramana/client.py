@@ -146,6 +146,7 @@ class PramanaClient:
         combined = {
             "result_id": rid,
             "domain": "retail",
+            "query": query,
             "status": "partial"
             if any(r["status"] == "error" for r in results)
             else ("ok" if any(r["items"] for r in results) else "empty"),

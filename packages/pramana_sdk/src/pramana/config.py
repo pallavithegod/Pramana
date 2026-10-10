@@ -13,8 +13,8 @@ class Settings(BaseModel):
     ollama_model: str = "qwen2.5:7b"
     max_searches: int = Field(default=8, ge=1, le=50)
     max_tool_calls: int = Field(default=16, ge=1, le=50)
-    timeout_seconds: int = Field(default=180, ge=10, le=600)
-    max_concurrent_chats: int = Field(default=2, ge=1, le=8)
+    timeout_seconds: int = Field(default=300, ge=10, le=600)
+    max_concurrent_chats: int = Field(default=1, ge=1, le=8)
     runtime_db: Path = Path("data/runtime/pramana.sqlite")
 
     @field_validator("ollama_base_url")
@@ -35,7 +35,7 @@ class Settings(BaseModel):
             ollama_model=os.getenv("OLLAMA_MODEL", "qwen2.5:7b"),
             max_searches=int(os.getenv("PRAMANA_MAX_SEARCHES", "8")),
             max_tool_calls=int(os.getenv("PRAMANA_MAX_TOOL_CALLS", "16")),
-            timeout_seconds=int(os.getenv("PRAMANA_TIMEOUT_SECONDS", "180")),
-            max_concurrent_chats=int(os.getenv("PRAMANA_MAX_CONCURRENT_CHATS", "2")),
+            timeout_seconds=int(os.getenv("PRAMANA_TIMEOUT_SECONDS", "300")),
+            max_concurrent_chats=int(os.getenv("PRAMANA_MAX_CONCURRENT_CHATS", "1")),
             runtime_db=Path(os.getenv("PRAMANA_RUNTIME_DB", "data/runtime/pramana.sqlite")),
         )
